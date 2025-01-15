@@ -1,6 +1,6 @@
 import { NavLink, Link, useNavigate } from 'react-router-dom'
 import Lottie from "lottie-react";
-import loginLottieData from "../assets/animation/Animation-2.json"
+import loginLottieData from "../assets/animation/Animation-4.json"
 import React, { useContext, useState } from 'react'
 import { AuthContext } from '../provider/AuthProvider';
 import { FaEye, FaEyeSlash } from "react-icons/fa";
@@ -95,12 +95,12 @@ export default function Login() {
           </label>
         </div>
         <div className="form-control mt-6">
-          <button className="btn bg-green-800 text-white">Login</button>
-          <p className='text-center mt-4'>Don't have an account? <NavLink to='/register' className='text-green-800'>Register</NavLink></p>
+          <button className="btn bg-[rgb(76,48,161)] text-white">Login</button>
+          <p className='text-center mt-4'>Don't have an account? <NavLink to='/register' className='text-[rgb(76,48,161)]'>Register</NavLink></p>
         </div>
       </form>
       <div className="divider w-11/12 mx-auto">OR</div>
-      <button onClick={handleGoogleLogin} className="btn bg-green-800 text-white w-11/12 mx-auto mt-6"><i className="fa-brands fa-google"></i>Google Login</button>
+      <button onClick={handleGoogleLogin} className="btn bg-[rgb(76,48,161)] text-white w-11/12 mx-auto mt-6"><i className="fa-brands fa-google"></i>Google Login</button>
     </div>
   </div>
 </div>

@@ -1,6 +1,6 @@
 import { NavLink, Link, useNavigate } from 'react-router-dom'
 import Lottie from "lottie-react";
-import registerLottieData from "../assets/animation/Animation-2.json"
+import registerLottieData from "../assets/animation/Animation-4.json"
 import React, { useContext, useState } from 'react'
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import Swal from 'sweetalert2';
@@ -115,8 +115,8 @@ export default function Register() {
           
         </div>
         <div className="form-control mt-6">
-          <button className="btn bg-green-800 text-white">Register</button>
-          <p className='text-center mt-4'>Already have an account? <NavLink to='/login' className='text-green-800'>Login</NavLink></p>
+          <button className="btn text-white bg-[rgb(76,48,161)]">Register</button>
+          <p className='text-center mt-4'>Already have an account? <NavLink to='/login' className='text-[rgb(76,48,161)]'>Login</NavLink></p>
         </div>
       </form>
     </div>
