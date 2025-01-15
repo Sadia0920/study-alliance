@@ -2,7 +2,7 @@ export default function Cover({img}) {
     return (
       <div>
         <div
-    className="hero h-[500px]"
+    className="hero h-[550px]"
     style={{
       backgroundImage: `url("${img}")`
     }}>

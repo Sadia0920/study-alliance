@@ -20,7 +20,7 @@ export default function Navbar() {
       })
     }
   return (
-    <div className='bg-[#EAE6FF] text-[rgb(51,51,51)] sticky top-0 z-10'>
+    <div className='bg-[#EAE6FF] text-[rgb(51,51,51)] bg-opacity-60 fixed top-0 z-10 w-full'>
     <div className="navbar w-10/12 mx-auto">
     <div className="navbar-start">
     <div className="dropdown">
@@ -41,21 +41,9 @@ export default function Navbar() {
       <ul
         tabIndex={0}
         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-        <li><NavLink to='/'>Home</NavLink></li>
-        <li><NavLink to='/allSession'>All Session</NavLink></li>
-        <li><NavLink to='/about'>About</NavLink></li>
-        {
-          user && 
-          <>
-          <li>
-          <a>My Profile</a>
-          <ul className="p-2">
-          <li><NavLink>Add Volunteer Need Post</NavLink></li>
-          <li><NavLink>ManageMyPosts</NavLink></li>
-          </ul>
-        </li>
-          </>
-        }
+        <li className='font-bold'><NavLink to='/'>Home</NavLink></li>
+        <li className='font-bold'><NavLink to='/allSession'>All Session</NavLink></li>
+        <li className='font-bold'><NavLink to='/about'>About</NavLink></li>
       </ul>
     </div>
     <i className="fa-solid fa-book-open-reader text-2xl text-[rgb(76,48,161)]"></i>
@@ -63,23 +51,9 @@ export default function Navbar() {
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
-      <li><NavLink to='/'>Home</NavLink></li>
-      <li><NavLink to='/allSession'>All Session</NavLink></li>
-      <li><NavLink to='/about'>About</NavLink></li>
-      {
-        user && 
-        <>
-        <li>
-        <details>
-          <summary>My Profile</summary>
-          <ul className="p-2">
-          <li><NavLink>Add Volunteer Need Post</NavLink></li>
-          <li><NavLink>ManageMyPosts</NavLink></li>
-          </ul>
-        </details>
-      </li>
-        </>
-      }
+      <li className='font-bold'><NavLink to='/'>Home</NavLink></li>
+      <li className='font-bold'><NavLink to='/allSession'>All Session</NavLink></li>
+      <li className='font-bold'><NavLink to='/about'>About</NavLink></li>
     </ul>
   </div>
   <div className="md:navbar-end w-7/12 ml-9 lg:ml-14">
@@ -91,7 +65,10 @@ export default function Navbar() {
   data-tooltip-place="top">
       <img className='w-8 h-8 rounded-full' src={user.photoURL} alt="" />
       </a>
-      <Link onClick={handleSignOut} className="btn bg-[#A5D8FF] text-[#4A4A4A] ml-4">LogOut</Link>
+      <div className='flex md:flex-row flex-col'>
+      <Link onClick={handleSignOut} className="btn bg-[rgb(76,48,161)] text-white mx-2">LogOut</Link>
+      <Link className="btn text-white bg-[rgb(76,48,161)]">Dashboard</Link>
+      </div>
       </>
       :
       <>

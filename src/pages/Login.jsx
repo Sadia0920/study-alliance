@@ -68,7 +68,7 @@ export default function Login() {
   return (
     <div className='my-7'>
     <Helmet>
-      <title>VolunForce | Login</title>
+      <title>Study Alliance | Login</title>
     </Helmet>
     <div className="hero">
     <div className="hero-content flex-col lg:flex-row-reverse">

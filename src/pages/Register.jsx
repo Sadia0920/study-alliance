@@ -18,10 +18,11 @@ export default function Register() {
     const form = event.target;
     const name = form.name.value;
     const photo = form.photo.value;
+    const role = form.role.value;
     const email = form.email.value;
     const password = form.password.value;
-    const newUser = {name,photo,email,password}
-    // console.log(newUser);
+    const newUser = {name,photo,role,email,password}
+    console.log(newUser);
 
     setErrorMessage('')
 
@@ -78,7 +79,7 @@ export default function Register() {
   return (
     <div className='my-7'>
     <Helmet>
-      <title>VolunForce | Register</title>
+      <title>Study Alliance | Register</title>
     </Helmet>
     <div className="hero">
   <div className="hero-content flex-col lg:flex-row-reverse">
@@ -100,6 +101,19 @@ export default function Register() {
           </label>
           <input type="text" placeholder="Your Photo URL*" name='photo' className="input input-bordered" required />
         </div>
+
+        <div className="form-control"> 
+        <label className="label">
+            <span className="label-text">Role</span>
+          </label> 
+        <select className="select select-bordered w-full" name='role' required type='text'>
+        <option disabled selected>select role</option>
+        <option>Student</option>
+        <option>Tutor</option>
+        <option>Admin</option>
+        </select>
+        </div>
+
         <div className="form-control">
           <label className="label">
             <span className="label-text">Email</span>

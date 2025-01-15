@@ -7,7 +7,7 @@ export default function AllSession() {
   return (
     <div>
     <Helmet>
-      <title>Bistro Boss | Our Menu</title>
+      <title>Study Alliance | All Session</title>
     </Helmet>
     {/* <Cover img={menuImg}></Cover> */}
   </div>
