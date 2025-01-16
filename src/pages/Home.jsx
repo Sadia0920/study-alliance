@@ -28,7 +28,7 @@ export default function Home(){
       return acc;
     }, {})
  );
- console.log(uniqueTutors)
+//  console.log(uniqueTutors)
 
     return(
         <div>

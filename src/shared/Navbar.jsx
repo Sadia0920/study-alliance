@@ -41,7 +41,7 @@ export default function Navbar() {
   </div>
   <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-32 p-2 shadow">
     <li><Link onClick={handleSignOut} className="btn bg-[rgb(76,48,161)] text-white">LogOut</Link></li>
-    <li><Link className="btn text-white bg-[rgb(76,48,161)]">Dashboard</Link></li>
+    <li><Link to='/dashboard' className="btn text-white bg-[rgb(76,48,161)]">Dashboard</Link></li>
   </ul>
 </div>
       </>

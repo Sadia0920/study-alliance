@@ -6,6 +6,8 @@ import { AuthContext } from '../provider/AuthProvider';
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import Swal from 'sweetalert2';
 import { Helmet } from 'react-helmet-async';
+// import db from "../firebase/firebase.init";
+// import { get, ref, set } from 'firebase/database';
 // import axios from 'axios';
 
 export default function Login() {
@@ -51,6 +53,22 @@ export default function Login() {
     .then(result => {
       // console.log(result.user)
       setUser(result.user)
+      console.log(result.user)
+      // const userRef = ref(db, `users/${user.uid}`);
+      // const snapshot = get(userRef);
+      // if (!snapshot.exists()) {
+      //   // If user doesn't exist, set their role to "student"
+      //     setUser(userRef, {
+      //     name: user.displayName,
+      //     email: user.email,
+      //     role: "student", // Assign role
+      //     createdAt: new Date().toISOString(),
+      //   });
+      //   console.log("New user added with role 'student'.");
+      // } else {
+      //   console.log("User already exists:", snapshot.val());
+      // }
+
       Swal.fire({
         title: 'Success',
         text: 'Login successfully',

@@ -22,7 +22,7 @@ export default function Register() {
     const email = form.email.value;
     const password = form.password.value;
     const newUser = {name,photo,role,email,password}
-    console.log(newUser);
+    // console.log(newUser);
 
     setErrorMessage('')
 
