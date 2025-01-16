@@ -1,0 +1,394 @@
+[
+    {
+        "sessionTitle": "Basics of Graphic Design",
+        "tutorName": "Robert Smith",
+        "averageRating": 4.6,
+        "sessionDescription": "A detailed session on basics of graphic design led by Robert Smith.",
+        "registrationStartDate": "2025-01-24 12:59:12",
+        "registrationEndDate": "2025-01-29 12:59:12",
+        "classStartTime": "2025-02-01 12:59:12",
+        "classEndDate": "2025-02-01 13:59:12",
+        "sessionDuration": "1 hours",
+        "registrationFee": "Free",
+        "reviews": [
+            "Great interaction and resources provided.",
+            "Loved the collaborative exercises!"
+        ],
+        "bookNowStatus": "Book Now",
+        "additionalInfo": "Session ID: 1"
+    },
+    {
+        "sessionTitle": "Deep Dive into Calculus",
+        "tutorName": "Linda Brown",
+        "averageRating": 3.7,
+        "sessionDescription": "A detailed session on deep dive into calculus led by Linda Brown.",
+        "registrationStartDate": "2025-01-07 12:31:14",
+        "registrationEndDate": "2025-01-15 12:31:14",
+        "classStartTime": "2025-02-12 12:31:14",
+        "classEndDate": "2025-02-12 14:31:14",
+        "sessionDuration": "2 hours",
+        "registrationFee": "Free",
+        "reviews": [
+            "Great interaction and resources provided.",
+            "Enjoyed the session, but it felt a bit rushed.",
+            "Well-organized and informative.",
+            "Perfect for beginners. Clear and concise.",
+            "Amazing session, learned a lot!"
+        ],
+        "bookNowStatus": "Book Now",
+        "additionalInfo": "Session ID: 2"
+    },
+    {
+        "sessionTitle": "Deep Dive into Calculus",
+        "tutorName": "Michael Lee",
+        "averageRating": 4.9,
+        "sessionDescription": "A detailed session on deep dive into calculus led by Michael Lee.",
+        "registrationStartDate": "2025-01-20 21:11:38",
+        "registrationEndDate": "2025-01-25 21:11:38",
+        "classStartTime": "2025-01-26 21:11:38",
+        "classEndDate": "2025-01-26 23:11:38",
+        "sessionDuration": "2 hours",
+        "registrationFee": "$63",
+        "reviews": [
+            "Amazing session, learned a lot!",
+            "Perfect for beginners. Clear and concise.",
+            "Well-organized and informative.",
+            "Enjoyed the session, but it felt a bit rushed."
+        ],
+        "bookNowStatus": "Book Now",
+        "additionalInfo": "Session ID: 3"
+    },
+    {
+        "sessionTitle": "Deep Dive into Calculus",
+        "tutorName": "Alice Johnson",
+        "averageRating": 3.9,
+        "sessionDescription": "A detailed session on deep dive into calculus led by Alice Johnson.",
+        "registrationStartDate": "2025-02-06 02:58:44",
+        "registrationEndDate": "2025-02-09 02:58:44",
+        "classStartTime": "2025-02-10 02:58:44",
+        "classEndDate": "2025-02-10 03:58:44",
+        "sessionDuration": "1 hours",
+        "registrationFee": "Free",
+        "reviews": [
+            "Great interaction and resources provided.",
+            "Good session but could use more examples.",
+            "Amazing session, learned a lot!",
+            "Loved the collaborative exercises!"
+        ],
+        "bookNowStatus": "Book Now",
+        "additionalInfo": "Session ID: 4"
+    },
+    {
+        "sessionTitle": "Creative Writing Workshop",
+        "tutorName": "Michael Lee",
+        "averageRating": 4.1,
+        "sessionDescription": "A detailed session on creative writing workshop led by Michael Lee.",
+        "registrationStartDate": "2025-01-20 12:30:38",
+        "registrationEndDate": "2025-01-05 12:30:38",
+        "classStartTime": "2025-01-14 12:30:38",
+        "classEndDate": "2025-01-26 15:30:38",
+        "sessionDuration": "3 hours",
+        "registrationFee": "Free",
+        "reviews": [
+            "Good session but could use more examples.",
+            "Loved the collaborative exercises!",
+            "Well-organized and informative.",
+            "The tutor was excellent at explaining complex topics.",
+            "Detailed and easy to follow."
+        ],
+        "bookNowStatus": "Book Now",
+        "additionalInfo": "Session ID: 5"
+    },
+    {
+        "sessionTitle": "Essay Writing Techniques",
+        "tutorName": "Linda Brown",
+        "averageRating": 4.1,
+        "sessionDescription": "A detailed session on essay writing techniques led by Linda Brown.",
+        "registrationStartDate": "2025-01-28 04:26:45",
+        "registrationEndDate": "2025-01-29 04:26:45",
+        "classStartTime": "2025-01-31 04:26:45",
+        "classEndDate": "2025-01-31 07:26:45",
+        "sessionDuration": "3 hours",
+        "registrationFee": "Free",
+        "reviews": [
+            "Enjoyed the session, but it felt a bit rushed.",
+            "Detailed and easy to follow.",
+            "Great interaction and resources provided.",
+            "Amazing session, learned a lot!",
+            "Perfect for beginners. Clear and concise."
+        ],
+        "bookNowStatus": "Book Now",
+        "additionalInfo": "Session ID: 6"
+    },
+    {
+        "sessionTitle": "Introduction to Machine Learning",
+        "tutorName": "Alice Johnson",
+        "averageRating": 3.3,
+        "sessionDescription": "A detailed session on introduction to machine learning led by Alice Johnson.",
+        "registrationStartDate": "2025-02-09 01:46:07",
+        "registrationEndDate": "2025-02-14 01:46:07",
+        "classStartTime": "2025-02-16 01:46:07",
+        "classEndDate": "2025-02-16 04:46:07",
+        "sessionDuration": "3 hours",
+        "registrationFee": "Free",
+        "reviews": [
+            "The tutor was excellent at explaining complex topics.",
+            "Good session but could use more examples."
+        ],
+        "bookNowStatus": "Book Now",
+        "additionalInfo": "Session ID: 7"
+    },
+    {
+        "sessionTitle": "Mastering Algebra Basics",
+        "tutorName": "Emily Davis",
+        "averageRating": 4.0,
+        "sessionDescription": "A detailed session on mastering algebra basics led by Emily Davis.",
+        "registrationStartDate": "2025-01-28 17:38:39",
+        "registrationEndDate": "2025-02-02 17:38:39",
+        "classStartTime": "2025-02-04 17:38:39",
+        "classEndDate": "2025-02-04 20:38:39",
+        "sessionDuration": "3 hours",
+        "registrationFee": "$39",
+        "reviews": [
+            "Good session but could use more examples.",
+            "Detailed and easy to follow.",
+            "Loved the collaborative exercises!"
+        ],
+        "bookNowStatus": "Book Now",
+        "additionalInfo": "Session ID: 8"
+    },
+    {
+        "sessionTitle": "Physics for Beginners",
+        "tutorName": "Michael Lee",
+        "averageRating": 4.0,
+        "sessionDescription": "A detailed session on physics for beginners led by Michael Lee.",
+        "registrationStartDate": "2025-01-02 18:32:29",
+        "registrationEndDate": "2025-01-10 18:32:29",
+        "classStartTime": "2025-01-26 18:32:29",
+        "classEndDate": "2025-01-26 20:32:29",
+        "sessionDuration": "2 hours",
+        "registrationFee": "Free",
+        "reviews": [
+            "Loved the collaborative exercises!",
+            "Well-organized and informative."
+        ],
+        "bookNowStatus": "Book Now",
+        "additionalInfo": "Session ID: 9"
+    },
+    {
+        "sessionTitle": "Creative Writing Workshop",
+        "tutorName": "Linda Brown",
+        "averageRating": 5.0,
+        "sessionDescription": "A detailed session on creative writing workshop led by Linda Brown.",
+        "registrationStartDate": "2025-02-09 14:24:35",
+        "registrationEndDate": "2025-02-13 14:24:35",
+        "classStartTime": "2025-02-16 14:24:35",
+        "classEndDate": "2025-02-16 17:24:35",
+        "sessionDuration": "3 hours",
+        "registrationFee": "Free",
+        "reviews": [
+            "Enjoyed the session, but it felt a bit rushed.",
+            "Good session but could use more examples.",
+            "Well-organized and informative.",
+            "Loved the collaborative exercises!",
+            "Amazing session, learned a lot!"
+        ],
+        "bookNowStatus": "Book Now",
+        "additionalInfo": "Session ID: 10"
+    },
+    {
+        "sessionTitle": "Creative Writing Workshop",
+        "tutorName": "Alice Johnson",
+        "averageRating": 4.7,
+        "sessionDescription": "A detailed session on creative writing workshop led by Alice Johnson.",
+        "registrationStartDate": "2025-01-27 16:27:18",
+        "registrationEndDate": "2025-01-28 16:27:18",
+        "classStartTime": "2025-01-31 16:27:18",
+        "classEndDate": "2025-01-31 19:27:18",
+        "sessionDuration": "3 hours",
+        "registrationFee": "Free",
+        "reviews": [
+            "Amazing session, learned a lot!",
+            "Enjoyed the session, but it felt a bit rushed.",
+            "Perfect for beginners. Clear and concise.",
+            "Loved the collaborative exercises!"
+        ],
+        "bookNowStatus": "Book Now",
+        "additionalInfo": "Session ID: 11"
+    },
+    {
+        "sessionTitle": "Physics for Beginners",
+        "tutorName": "Michael Lee",
+        "averageRating": 3.9,
+        "sessionDescription": "A detailed session on physics for beginners led by Michael Lee.",
+        "registrationStartDate": "2025-01-25 07:23:16",
+        "registrationEndDate": "2025-01-26 07:23:16",
+        "classStartTime": "2025-01-28 07:23:16",
+        "classEndDate": "2025-01-28 09:23:16",
+        "sessionDuration": "2 hours",
+        "registrationFee": "$98",
+        "reviews": [
+            "Very engaging tutor, highly recommended.",
+            "Great interaction and resources provided.",
+            "Good session but could use more examples."
+        ],
+        "bookNowStatus": "Book Now",
+        "additionalInfo": "Session ID: 12"
+    },
+    {
+        "sessionTitle": "Essay Writing Techniques",
+        "tutorName": "Emily Davis",
+        "averageRating": 3.8,
+        "sessionDescription": "A detailed session on essay writing techniques led by Emily Davis.",
+        "registrationStartDate": "2025-01-27 19:14:38",
+        "registrationEndDate": "2025-01-30 19:14:38",
+        "classStartTime": "2025-02-02 19:14:38",
+        "classEndDate": "2025-02-02 22:14:38",
+        "sessionDuration": "3 hours",
+        "registrationFee": "$49",
+        "reviews": [
+            "Detailed and easy to follow.",
+            "Very engaging tutor, highly recommended.",
+            "Great interaction and resources provided.",
+            "Good session but could use more examples.",
+            "Well-organized and informative."
+        ],
+        "bookNowStatus": "Book Now",
+        "additionalInfo": "Session ID: 13"
+    },
+    {
+        "sessionTitle": "Basics of Graphic Design",
+        "tutorName": "Michael Lee",
+        "averageRating": 3.6,
+        "sessionDescription": "A detailed session on basics of graphic design led by Michael Lee.",
+        "registrationStartDate": "2025-02-03 15:52:49",
+        "registrationEndDate": "2025-02-06 15:52:49",
+        "classStartTime": "2025-02-07 15:52:49",
+        "classEndDate": "2025-02-07 17:52:49",
+        "sessionDuration": "2 hours",
+        "registrationFee": "Free",
+        "reviews": [
+            "Great interaction and resources provided.",
+            "Good session but could use more examples."
+        ],
+        "bookNowStatus": "Book Now",
+        "additionalInfo": "Session ID: 14"
+    },
+    {
+        "sessionTitle": "Basics of Graphic Design",
+        "tutorName": "Alice Johnson",
+        "averageRating": 3.8,
+        "sessionDescription": "A detailed session on basics of graphic design led by Alice Johnson.",
+        "registrationStartDate": "2025-02-03 17:03:50",
+        "registrationEndDate": "2025-02-04 17:03:50",
+        "classStartTime": "2025-02-06 17:03:50",
+        "classEndDate": "2025-02-06 20:03:50",
+        "sessionDuration": "3 hours",
+        "registrationFee": "Free",
+        "reviews": [
+            "Great interaction and resources provided.",
+            "Enjoyed the session, but it felt a bit rushed.",
+            "Well-organized and informative.",
+            "Perfect for beginners. Clear and concise."
+        ],
+        "bookNowStatus": "Book Now",
+        "additionalInfo": "Session ID: 15"
+    },
+    {
+        "sessionTitle": "Essay Writing Techniques",
+        "tutorName": "Linda Brown",
+        "averageRating": 3.9,
+        "sessionDescription": "A detailed session on essay writing techniques led by Linda Brown.",
+        "registrationStartDate": "2025-01-28 23:14:33",
+        "registrationEndDate": "2025-01-02 23:14:33",
+        "classStartTime": "2025-01-07 23:14:33",
+        "classEndDate": "2025-02-06 01:14:33",
+        "sessionDuration": "2 hours",
+        "registrationFee": "Free",
+        "reviews": [
+            "Well-organized and informative.",
+            "Amazing session, learned a lot!"
+        ],
+        "bookNowStatus": "Book Now",
+        "additionalInfo": "Session ID: 16"
+    },
+    {
+        "sessionTitle": "Essay Writing Techniques",
+        "tutorName": "Michael Lee",
+        "averageRating": 3.5,
+        "sessionDescription": "A detailed session on essay writing techniques led by Michael Lee.",
+        "registrationStartDate": "2025-02-04 06:40:33",
+        "registrationEndDate": "2025-02-06 06:40:33",
+        "classStartTime": "2025-02-07 06:40:33",
+        "classEndDate": "2025-02-07 08:40:33",
+        "sessionDuration": "2 hours",
+        "registrationFee": "Free",
+        "reviews": [
+            "Great interaction and resources provided.",
+            "Loved the collaborative exercises!",
+            "Enjoyed the session, but it felt a bit rushed.",
+            "Well-organized and informative.",
+            "Amazing session, learned a lot!"
+        ],
+        "bookNowStatus": "Book Now",
+        "additionalInfo": "Session ID: 17"
+    },
+    {
+        "sessionTitle": "Essay Writing Techniques",
+        "tutorName": "Linda Brown",
+        "averageRating": 3.9,
+        "sessionDescription": "A detailed session on essay writing techniques led by Linda Brown.",
+        "registrationStartDate": "2025-02-03 19:27:41",
+        "registrationEndDate": "2025-02-08 19:27:41",
+        "classStartTime": "2025-02-09 19:27:41",
+        "classEndDate": "2025-02-09 22:27:41",
+        "sessionDuration": "3 hours",
+        "registrationFee": "Free",
+        "reviews": [
+            "Well-organized and informative.",
+            "Detailed and easy to follow."
+        ],
+        "bookNowStatus": "Book Now",
+        "additionalInfo": "Session ID: 18"
+    },
+    {
+        "sessionTitle": "Creative Writing Workshop",
+        "tutorName": "Emily Davis",
+        "averageRating": 4.4,
+        "sessionDescription": "A detailed session on creative writing workshop led by Emily Davis.",
+        "registrationStartDate": "2025-02-01 01:48:57",
+        "registrationEndDate": "2025-02-05 01:48:57",
+        "classStartTime": "2025-02-08 01:48:57",
+        "classEndDate": "2025-02-08 03:48:57",
+        "sessionDuration": "2 hours",
+        "registrationFee": "Free",
+        "reviews": [
+            "The tutor was excellent at explaining complex topics.",
+            "Perfect for beginners. Clear and concise.",
+            "Loved the collaborative exercises!",
+            "Amazing session, learned a lot!"
+        ],
+        "bookNowStatus": "Book Now",
+        "additionalInfo": "Session ID: 19"
+    },
+    {
+        "sessionTitle": "SAT Math Crash Course",
+        "tutorName": "Linda Brown",
+        "averageRating": 3.7,
+        "sessionDescription": "A detailed session on sat math crash course led by Linda Brown.",
+        "registrationStartDate": "2025-01-12 20:55:29",
+        "registrationEndDate": "2025-01-15 20:55:29",
+        "classStartTime": "2025-02-01 20:55:29",
+        "classEndDate": "2025-02-01 23:55:29",
+        "sessionDuration": "3 hours",
+        "registrationFee": "Free",
+        "reviews": [
+            "Detailed and easy to follow.",
+            "Good session but could use more examples.",
+            "Well-organized and informative.",
+            "Great interaction and resources provided."
+        ],
+        "bookNowStatus": "Book Now",
+        "additionalInfo": "Session ID: 20"
+    }
+]

@@ -77,7 +77,7 @@ export default function Register() {
     })
   }
   return (
-    <div className='my-7'>
+    <div className='py-10'>
     <Helmet>
       <title>Study Alliance | Register</title>
     </Helmet>

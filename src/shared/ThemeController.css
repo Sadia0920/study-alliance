@@ -33,10 +33,10 @@ body {
   }
   
   body.dark-mode .theme-toggle-btn {
-    background-color: #444444;
+    background-color:transparent;
   }
   
   body.dark-mode .theme-toggle-btn:hover {
-    background-color: #555555;
+    background-color: transparent;
   }
   

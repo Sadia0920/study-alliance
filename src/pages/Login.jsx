@@ -66,7 +66,7 @@ export default function Login() {
   }
   
   return (
-    <div className='my-7'>
+    <div className='py-10'>
     <Helmet>
       <title>Study Alliance | Login</title>
     </Helmet>
