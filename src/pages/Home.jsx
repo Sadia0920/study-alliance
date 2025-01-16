@@ -5,12 +5,11 @@ import banner from '../assets/banner.jpg'
 import SectionTitle from "../shared/SectionTitle";
 import SessionCard from "../components/SessionCard";
 import TutorCard from "../components/TutorCard";
-import Session from "../shared/Session";
 
 export default function Home(){
     const[sessions,setSessions]=useState([]);
         useEffect( ()=> {
-            fetch('session details.json')
+            fetch('http://localhost:5000/session')
             .then(res => res.json())
             .then(data => setSessions(data))
         },[])
