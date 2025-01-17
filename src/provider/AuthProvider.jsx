@@ -40,24 +40,10 @@ export default function AuthProvider({children}) {
 
     useEffect(()=>{
         const unSubscribe = onAuthStateChanged(auth,currentUser => {
+            if(currentUser){
                 setUser(currentUser)
-                // console.log('stateCapture:', currentUser?.email)
-                // if(currentUser?.email){
-                //     const user = {email: currentUser.email}
-                //     axios.post('https://volun-force-server.vercel.app/jwt', user, {withCredentials: true})
-                //     .then(res => {
-                //         // console.log("login token",res.data);
-                //         setLoading(false)
-                //      })
-                // }
-                // else{
-                //     axios.post('https://volun-force-server.vercel.app/logout', {}, {withCredentials: true})
-                //     .then(res => {
-                //         // console.log('logout',res.data);
-                //         setLoading(false)
-                //     })
-                // }
-                
+                setLoading(false)
+            }
             return () => {
                 unSubscribe();
             }

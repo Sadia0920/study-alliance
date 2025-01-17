@@ -4,17 +4,32 @@ import { NavLink, Outlet } from 'react-router-dom'
 
 export default function Dashboard() {
   return (
-    <div className='w-10/12 mx-auto'>
+    <div className=''>
       <Helmet>
-        <title>Bistro Boss | Dashboard</title>
+        <title>Study Alliance | Dashboard</title>
       </Helmet>
       <div className='flex'>
         <div className='w-64 min-h-screen bg-slate-300'>
             <ul className='menu'>
+              {/* student */}
                 <li><NavLink to='/dashboard/about'>About</NavLink></li>
-                <li><NavLink to='cart'>My Cart</NavLink></li>
-                <li><NavLink>Update</NavLink></li>
-                <li><NavLink>All Session</NavLink></li>
+                <li><NavLink to='/dashboard/viewBookedSession'>View booked session</NavLink></li>
+                <li><NavLink to='/dashboard/createNote'>Create Note</NavLink></li>
+                <li><NavLink to='/dashboard/viewAllStudyMaterials'>View all study materials</NavLink></li>
+                <li><NavLink to='/dashboard/managePersonalNotes'>Manage personal notes
+                </NavLink></li>
+                <li><NavLink to='/'>Home</NavLink></li>
+
+                {/* tutor */}
+                <li><NavLink to='/dashboard/createStudySession'>Create Study Session</NavLink></li>
+                <li><NavLink to='/dashboard/viewAllStudySessions'>View All Study Sessions</NavLink></li>
+                <li><NavLink to='/dashboard/uploadMaterials'>Upload Materials</NavLink></li>
+                <li><NavLink to='/dashboard/viewAllMaterials'>View All Materials</NavLink></li>
+
+                {/* admin */}
+                <li><NavLink to='/dashboard/viewAllUsers'>View All Users</NavLink></li>
+                <li><NavLink to='/dashboard/adminViewAllStudySession'>Admin View All Study Session</NavLink></li>
+                <li><NavLink to='/dashboard/adminViewAllMaterials'>Admin View All Materials</NavLink></li>
             </ul>
         </div>
         <div className='flex-1'>

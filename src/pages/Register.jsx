@@ -22,7 +22,7 @@ export default function Register() {
     const email = form.email.value;
     const password = form.password.value;
     const newUser = {name,photo,role,email,password}
-    // console.log(newUser);
+  // console.log(newUser);
 
     setErrorMessage('')
 
@@ -58,7 +58,7 @@ export default function Register() {
     }
     updateUserInfo(profile)
     .then((res)=>{
-      // console.log(res.user)
+      console.log(res.user)
     })
     .catch(error => {
       setErrorMessage(error.message)

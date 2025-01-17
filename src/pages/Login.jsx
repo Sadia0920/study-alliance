@@ -26,7 +26,7 @@ export default function Login() {
     // SignInUser
     signInUser(email,password)
     .then(result => {
-      // console.log(result.user)
+      console.log(result.user)
       setUser(result.user)
       Swal.fire({
         title: 'Success',
@@ -54,21 +54,6 @@ export default function Login() {
       // console.log(result.user)
       setUser(result.user)
       console.log(result.user)
-      // const userRef = ref(db, `users/${user.uid}`);
-      // const snapshot = get(userRef);
-      // if (!snapshot.exists()) {
-      //   // If user doesn't exist, set their role to "student"
-      //     setUser(userRef, {
-      //     name: user.displayName,
-      //     email: user.email,
-      //     role: "student", // Assign role
-      //     createdAt: new Date().toISOString(),
-      //   });
-      //   console.log("New user added with role 'student'.");
-      // } else {
-      //   console.log("User already exists:", snapshot.val());
-      // }
-
       Swal.fire({
         title: 'Success',
         text: 'Login successfully',
