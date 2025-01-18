@@ -1,16 +1,69 @@
-import { useLoaderData, Link } from 'react-router-dom'
+import { useLoaderData, Link, useNavigate } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async';
-import { useState } from 'react';
+import { useContext } from 'react';
+import { AuthContext } from './../provider/AuthProvider';
+import useAxiosSecure from '../hooks/useAxiosSecure';
+import Swal from 'sweetalert2';
+// import useAxiosSecure from '../../hooks/useAxiosSecure';
 
 export default function SessionCardDetails() {
   
   const loadedSessionDetails = useLoaderData()
-  
+  const {user} = useContext(AuthContext)
+  const axiosSecure = useAxiosSecure();
+  const navigate = useNavigate();
   const {_id,sessionTitle,tutorName,averageRating,sessionDescription,registrationStartDate,registrationEndDate,classStartTime,classEndDate,sessionDuration,registrationFee,reviews,bookNowStatus,additionalInfo} = loadedSessionDetails
   const currentDate = new Date();
  const endDate = new Date(registrationEndDate);
-//  const startDate = new Date(registrationStartDate);
  const isOngoing = currentDate <= endDate;
+
+ const handleBookedSession = session => {
+  if(user && user.email){
+    const bookedSession = {
+      studySessionID: _id,
+      email: user.email,
+      sessionTitle,
+      tutorName,
+      averageRating,
+      sessionDescription,
+      registrationStartDate,
+      registrationEndDate,
+      classStartTime,
+      classEndDate,
+      sessionDuration,
+      registrationFee,
+      reviews,
+      bookNowStatus,
+      additionalInfo
+    }
+
+    // send data to the server
+       try{
+           axiosSecure.post('/bookedSession', bookedSession)
+           .then(res => {
+           console.log(res.data)
+             if(res.data.insertedId){
+                 Swal.fire({
+                     title: 'Success',
+                     text: 'Booked Session successfully',
+                     icon: 'success',
+                     confirmButtonText: 'Ok'
+                   })
+             }
+             navigate('/dashboard/viewBookedSession')
+         })
+       }
+       catch (err) {
+           Swal.fire({
+               title: 'Error',
+               text: 'Note added error',
+               icon: 'error',
+               confirmButtonText: 'Ok'
+             })
+       }
+       
+  }
+ }
   
   return (
     <div className='w-11/12 md:w-10/12 lg:w-7/12 mx-auto mt-36 mb-7'>
@@ -29,21 +82,25 @@ export default function SessionCardDetails() {
     <p className="text-lg mb-2 font-semibold text-gray-800">Class End Date :<span className='text-gray-500'>{classEndDate}</span></p>
     <p className="text-lg mb-2 font-semibold text-gray-800">Session Duration :<span className='text-gray-500'>{sessionDuration}</span></p>
     <p className="text-lg mb-2 font-semibold text-gray-800">Registration Fee :<span className='text-gray-500'>{registrationFee}</span></p>
+    <p className="text-lg mb-2 font-semibold text-gray-800">Reviews :</p>
+    {
+      reviews.map((review,idx) => <li key={idx} className='text-gray-500'>{review}</li>)
+    }
     {isOngoing ? (
         <p className="text-lg mb-2 font-semibold text-gray-800">Registration Status: <strong className='text-green-600'>Ongoing</strong></p>
       ) : (
         <p className="text-lg mb-2 font-semibold text-gray-800">Registration Status: <strong className='text-red-600'>Closed</strong></p>
     )}
-    {/* <p className="text-lg mb-2 font-semibold text-gray-800">Book Now Status :<span className='text-gray-500'>{bookNowStatus}</span></p> */}
+   
     <p className="text-lg mb-2 font-semibold text-gray-800">Additional Info :<span className='text-gray-500'>{additionalInfo}</span></p>
     <div className="card-actions">
       {
-        registrationFee == 'Free' ? (
+        registrationFee == 0 ? (
           <button disabled={true} className="btn bg-green-800 text-white">{bookNowStatus}</button>
         )
         :
         (
-          <Link ><button className="btn bg-green-800 text-white">{bookNowStatus}</button></Link>
+          <Link ><button onClick={handleBookedSession} className="btn bg-green-800 text-white">{bookNowStatus}</button></Link>
         )
       }
       
