@@ -1,7 +1,6 @@
 import React, { useContext} from 'react'
 import Swal from 'sweetalert2';
 import { Helmet } from 'react-helmet-async';
-// import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from './../../provider/AuthProvider';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
@@ -19,7 +18,6 @@ export default function CreateNote() {
     const email = form.email.value;
     const title = form.title.value;
     const description = form.description.value;
-    
     const newNote = {email,description,title}
     // console.log(newNote)
 
@@ -44,12 +42,11 @@ export default function CreateNote() {
     catch (err) {
         Swal.fire({
             title: 'Error',
-            text: 'Note added error',
+            text: 'Note created error',
             icon: 'error',
             confirmButtonText: 'Ok'
           })
     }
-    
   }
   return (
     <div className='w-10/12 mx-auto py-7'>

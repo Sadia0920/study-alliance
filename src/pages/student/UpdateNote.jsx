@@ -17,7 +17,6 @@ export default function UpdateNote() {
     const email = form.email.value;
     const title = form.title.value;
     const description = form.description.value;
-    
     const newUpdatedNote = {email,description,title}
     // console.log(newNote)
 

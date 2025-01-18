@@ -11,7 +11,7 @@ export default function ManagePersonalNotes() {
   const [note,refetch] = useNote();
   const [noteData,setNoteData]=useState(note)
 
-  // delete volunteer post
+  // delete note
     const handleDeleteNote = (_id) => {
 
     Swal.fire({
