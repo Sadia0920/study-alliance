@@ -20,6 +20,7 @@ import AdminViewAllStudySession from './../pages/admin/AdminViewAllStudySession'
 import AdminViewAllMaterials from './../pages/admin/AdminViewAllMaterials';
 import PrivateRoute from './PrivateRoute';
 import SessionCardDetails from './../pages/SessionCardDetails';
+import UpdateNote from './../pages/student/UpdateNote';
 
 const router = createBrowserRouter([
     {
@@ -54,6 +55,11 @@ const router = createBrowserRouter([
         {
           path:'/dashboard/about',
           element:<About></About>,
+        },
+        {
+          path:'/dashboard/updateNotes/:id',
+          element:<PrivateRoute><UpdateNote></UpdateNote></PrivateRoute>,
+          loader: ({params})=>fetch(`http://localhost:5000/notes/${params.id}`)
         },
         {
           path:'/dashboard/viewBookedSession',
