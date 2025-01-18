@@ -18,6 +18,8 @@ import ViewAllMaterials from './../pages/tutor/ViewAllMaterials';
 import ViewAllUsers from './../pages/admin/ViewAllUsers';
 import AdminViewAllStudySession from './../pages/admin/AdminViewAllStudySession';
 import AdminViewAllMaterials from './../pages/admin/AdminViewAllMaterials';
+import PrivateRoute from './PrivateRoute';
+import SessionCardDetails from './../pages/SessionCardDetails';
 
 const router = createBrowserRouter([
     {
@@ -29,10 +31,11 @@ const router = createBrowserRouter([
           path: "/",
           element: <Home></Home>
         },
-        // {
-        //   path: "/about",
-        //   element: <About></About>,
-        // },
+        {
+          path: "/sessionCardDetails/:id",
+          element: <PrivateRoute><SessionCardDetails></SessionCardDetails></PrivateRoute>,
+          loader: ({params})=>fetch(`http://localhost:5000/session/${params.id}`)
+        },
       ]
     },
     {
@@ -45,7 +48,7 @@ const router = createBrowserRouter([
     },
     {
       path: "/dashboard",
-      element: <Dashboard></Dashboard>,
+      element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
       errorElement: <Error></Error>,
       children: [
         {
@@ -54,19 +57,19 @@ const router = createBrowserRouter([
         },
         {
           path:'/dashboard/viewBookedSession',
-          element:<ViewBookedSession></ViewBookedSession>,
+          element:<PrivateRoute><ViewBookedSession></ViewBookedSession></PrivateRoute>,
         },
         {
           path:'/dashboard/createNote',
-          element:<CreateNote></CreateNote>,
+          element:<PrivateRoute><CreateNote></CreateNote></PrivateRoute>,
         },
         {
           path:'/dashboard/managePersonalNotes',
-          element:<ManagePersonalNotes></ManagePersonalNotes>,
+          element:<PrivateRoute><ManagePersonalNotes></ManagePersonalNotes></PrivateRoute>,
         },
         {
           path:'/dashboard/viewAllStudyMaterials',
-          element:<ViewAllStudyMaterials></ViewAllStudyMaterials>,
+          element:<PrivateRoute><ViewAllStudyMaterials></ViewAllStudyMaterials></PrivateRoute>,
         },
         // tutor
         {

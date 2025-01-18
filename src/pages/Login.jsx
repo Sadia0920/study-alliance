@@ -1,4 +1,4 @@
-import { NavLink, Link, useNavigate } from 'react-router-dom'
+import { NavLink, Link, useNavigate, useLocation } from 'react-router-dom'
 import Lottie from "lottie-react";
 import loginLottieData from "../assets/animation/Animation-4.json"
 import React, { useContext, useState } from 'react'
@@ -12,7 +12,9 @@ import { Helmet } from 'react-helmet-async';
 
 export default function Login() {
   const {signInUser,signInWithGoogle,setUser} = useContext(AuthContext);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/"
   const [showPassword,setShowPassword]=useState(false)
 
   const handleLogin = (event) => {
@@ -34,7 +36,7 @@ export default function Login() {
         icon: 'success',
         confirmButtonText: 'Done'
       })
-      navigate('/')
+      navigate(from, {replace: true});
       form.reset()
     })
     .catch(error => {

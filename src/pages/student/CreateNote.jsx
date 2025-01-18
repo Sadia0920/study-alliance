@@ -1,14 +1,15 @@
 import React, { useContext} from 'react'
-// import Swal from 'sweetalert2';
-// import { AuthContext } from '../provider/AuthProvider';
+import Swal from 'sweetalert2';
 import { Helmet } from 'react-helmet-async';
 // import axios from 'axios';
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { AuthContext } from './../../provider/AuthProvider';
+import useAxiosSecure from '../../hooks/useAxiosSecure';
 
 export default function CreateNote() {
   const {user} = useContext(AuthContext);
-  // const navigate = useNavigate()
+  const navigate = useNavigate();
+  const axiosSecure = useAxiosSecure();
 
   const handleCreateNote = (event) => {
     event.preventDefault();
@@ -18,13 +19,13 @@ export default function CreateNote() {
     const description = form.description.value;
     
     const newNote = {email,description,title}
-    console.log(newNote)
+    // console.log(newNote)
 
     // send data to the server
     try{
-        axios.post('http://localhost:5000/notes', newNote)
+        axiosSecure.post('/notes', newNote)
         .then(res => {
-        //   console.log(res.data)
+        console.log(res.data)
           if(res.data.insertedId){
               Swal.fire({
                   title: 'Success',
@@ -34,13 +35,13 @@ export default function CreateNote() {
                 })
           }
           form.reset()
-          //navigate('/manageMyPosts')
+          navigate('/dashboard/managePersonalNotes')
       })
     }
     catch (err) {
         Swal.fire({
             title: 'Error',
-            text: 'Post added error',
+            text: 'Note added error',
             icon: 'error',
             confirmButtonText: 'Ok'
           })
@@ -54,7 +55,7 @@ export default function CreateNote() {
         </Helmet>
         <div className=' bg-base-200 rounded-xl p-10'>
             <h2 className='text-center text-4xl font-bold text-[#374151]'>Create Note</h2>
-            <p className='text-center text-[#1B1A1AB3] w-9/12 mx-auto mt-8'>It is a dedicated area where you can add volunteer needed post. This page can significantly enhance user engagement.</p>
+            <p className='text-center text-[#1B1A1AB3] w-9/12 mx-auto mt-8'>It is a dedicated area where student can create their notes.</p>
         <form onSubmit={handleCreateNote}>
         <div className='mt-6'>
             <div className='md:w-full'>

@@ -3,7 +3,8 @@ import './SessionCard.css'
 import { Link } from 'react-router-dom';
 
 export default function SessionCard({item}) {
-const {sessionTitle,sessionDescription,registrationEndDate,registrationStartDate} = item;
+const {_id,sessionTitle,sessionDescription,registrationEndDate,registrationStartDate} = item;
+
 const currentDate = new Date();
  const endDate = new Date(registrationEndDate);
 //  const startDate = new Date(registrationStartDate);
@@ -19,7 +20,7 @@ const currentDate = new Date();
         <p>Registration Status: <strong className='text-red-600'>Closed</strong></p>
     )}
     </div>
-    <Link><p className='btn border-0 bg-transparent border-y-2 border-[rgb(76,48,161)] text-[rgb(76,48,161)]'>Read More</p></Link>
+    <Link to={`/sessionCardDetails/${_id}`}><p className='btn border-0 bg-transparent border-y-2 border-[rgb(76,48,161)] text-[rgb(76,48,161)]'>Read More</p></Link>
   </div>
   )
 }
