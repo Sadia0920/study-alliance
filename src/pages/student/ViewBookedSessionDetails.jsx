@@ -1,76 +1,75 @@
 import { useLoaderData, Link, useNavigate } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async';
 import { useContext } from 'react';
-import { AuthContext } from './../provider/AuthProvider';
-import useAxiosSecure from '../hooks/useAxiosSecure';
-import Swal from 'sweetalert2';
+// import Swal from 'sweetalert2';
+import { AuthContext } from '../../provider/AuthProvider';
 // import useAxiosSecure from '../../hooks/useAxiosSecure';
+import CreateReview from './CreateReview';
 
-export default function SessionCardDetails() {
+export default function ViewBookedSessionDetails() {
   
-  const loadedSessionDetails = useLoaderData()
+  const loadedViewSessionDetails = useLoaderData()
   const {user} = useContext(AuthContext)
-  const axiosSecure = useAxiosSecure();
-  const navigate = useNavigate();
-  const {_id,sessionTitle,tutorName,averageRating,sessionDescription,registrationStartDate,registrationEndDate,classStartTime,classEndDate,sessionDuration,registrationFee,reviews,bookNowStatus,additionalInfo} = loadedSessionDetails
+//   const axiosSecure = useAxiosSecure();
+//   const navigate = useNavigate();
+  const {_id,sessionTitle,tutorName,averageRating,sessionDescription,registrationStartDate,registrationEndDate,classStartTime,classEndDate,sessionDuration,registrationFee,reviews,bookNowStatus,additionalInfo} = loadedViewSessionDetails
   const currentDate = new Date();
  const endDate = new Date(registrationEndDate);
  const isOngoing = currentDate <= endDate;
 
- const handleBookedSession = session => {
-  if(user && user.email){
-    const bookedSession = {
-      studySessionID: _id,
-      email: user.email,
-      sessionTitle,
-      tutorName,
-      averageRating,
-      sessionDescription,
-      registrationStartDate,
-      registrationEndDate,
-      classStartTime,
-      classEndDate,
-      sessionDuration,
-      registrationFee,
-      reviews,
-      bookNowStatus,
-      additionalInfo
-    }
+//  const handleBookedSession = session => {
+//   if(user && user.email){
+//     const bookedSession = {
+//       studySessionID: _id,
+//       email: user.email,
+//       sessionTitle,
+//       tutorName,
+//       averageRating,
+//       sessionDescription,
+//       registrationStartDate,
+//       registrationEndDate,
+//       classStartTime,
+//       classEndDate,
+//       sessionDuration,
+//       registrationFee,
+//       reviews,
+//       bookNowStatus,
+//       additionalInfo
+//     }
 
-    // send data to the server
-       try{
-           axiosSecure.post('/bookedSession', bookedSession)
-           .then(res => {
-           console.log(res.data)
-             if(res.data.insertedId){
-                 Swal.fire({
-                     title: 'Success',
-                     text: 'Booked Session successfully',
-                     icon: 'success',
-                     confirmButtonText: 'Ok'
-                   })
-             }
-             navigate('/dashboard/viewBookedSession')
-         })
-       }
-       catch (err) {
-           Swal.fire({
-               title: 'Error',
-               text: 'Note added error',
-               icon: 'error',
-               confirmButtonText: 'Ok'
-             })
-       }
+//     // send data to the server
+//        try{
+//            axiosSecure.post('/bookedSession', bookedSession)
+//            .then(res => {
+//            console.log(res.data)
+//              if(res.data.insertedId){
+//                  Swal.fire({
+//                      title: 'Success',
+//                      text: 'Booked Session successfully',
+//                      icon: 'success',
+//                      confirmButtonText: 'Ok'
+//                    })
+//              }
+//              navigate('/dashboard/viewBookedSession')
+//          })
+//        }
+//        catch (err) {
+//            Swal.fire({
+//                title: 'Error',
+//                text: 'Note added error',
+//                icon: 'error',
+//                confirmButtonText: 'Ok'
+//              })
+//        }
        
-  }
- }
-  
+//   }
+//  }
   return (
-    <div className='w-11/12 md:w-10/12 lg:w-7/12 mx-auto mt-36 mb-7'>
+    <div className='w-11/12 md:w-10/12 mx-auto my-7'>
         <Helmet>
-        <title>Study Alliance | Session Details</title>
+        <title>Study Alliance | Booked Session Details</title>
         </Helmet>
-       <div className="card bg-base-100 shadow-xl">
+       <div className="card bg-base-200 shadow-xl">
    <div className="card-body items-center text-center">
      <h2 className="card-title text-xl font-bold text-gray-950">{sessionTitle}</h2>
      <p className="text-lg font-semibold text-gray-800">Tutor Name :<span className='text-gray-500'>{tutorName}</span></p>
@@ -94,7 +93,7 @@ export default function SessionCardDetails() {
    
     <p className="text-lg mb-2 font-semibold text-gray-800">Additional Info :<span className='text-gray-500'>{additionalInfo}</span></p>
     <div className="card-actions">
-      {
+      {/* {
         registrationFee == 0 ? (
           <button onClick={handleBookedSession} disabled={isOngoing? false : true} className="btn bg-green-800 text-white">{bookNowStatus}</button>
         )
@@ -103,11 +102,14 @@ export default function SessionCardDetails() {
           <Link to='/paymentPage' ><button onClick={handleBookedSession} disabled={isOngoing? false : true}className="btn bg-green-800 text-white">{bookNowStatus}</button></Link>
         )
       }
-      
+       */}
    </div>
 
 </div>
-</div>
+        </div>
+        <CreateReview loadedViewSessionDetails={loadedViewSessionDetails}></CreateReview>
   </div>
   )
 }
+
+

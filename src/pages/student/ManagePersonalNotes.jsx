@@ -9,7 +9,7 @@ export default function ManagePersonalNotes() {
 
   const axiosSecure = useAxiosSecure();
   const [note,refetch] = useNote();
-  const [noteData,setNoteData]=useState(note)
+  // const [noteData,setNoteData]=useState(note)
 
   // delete note
     const handleDeleteNote = (_id) => {
@@ -26,16 +26,17 @@ export default function ManagePersonalNotes() {
       if (result.isConfirmed) {
         axiosSecure.delete(`/notes/${_id}`)
         .then(res => {
-          console.log(res.data)
+          // console.log(res.data)
           if(res.data.deletedCount > 0){
+            refetch();
           Swal.fire({
           title: "Deleted!",
           text: "Your Note has been deleted.",
           icon: "success"
         });
-        refetch()
-        const remainingNote = noteData.filter(note => note._id !== _id)
-        setNoteData(remainingNote)
+        // refetch()
+        // const remainingNote = noteData.filter(note => note._id !== _id)
+        // setNoteData(remainingNote)
           }
         })
       }
@@ -57,7 +58,7 @@ export default function ManagePersonalNotes() {
     {/* head */}
     <thead>
       <tr>
-      <th></th>
+      <th>#</th>
       <th>Email</th>
       <th>Title</th>
       <th>Description</th>
@@ -67,7 +68,7 @@ export default function ManagePersonalNotes() {
     <tbody> 
     {/* row 1 */}
     {
-      noteData.map((item,idx) =>  <tr key={item._id}>
+      note.map((item,idx) =>  <tr key={item._id}>
       <th>{idx + 1}</th>
       <td>{item.email}</td>
       <td>{item.title}</td>

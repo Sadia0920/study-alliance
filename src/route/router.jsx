@@ -21,6 +21,8 @@ import AdminViewAllMaterials from './../pages/admin/AdminViewAllMaterials';
 import PrivateRoute from './PrivateRoute';
 import SessionCardDetails from './../pages/SessionCardDetails';
 import UpdateNote from './../pages/student/UpdateNote';
+import PaymentPage from "../pages/PaymentPage";
+import ViewBookedSessionDetails from "../pages/student/ViewBookedSessionDetails";
 
 const router = createBrowserRouter([
     {
@@ -30,7 +32,12 @@ const router = createBrowserRouter([
       children: [
         {
           path: "/",
-          element: <Home></Home>
+          element: <Home></Home>,
+        },
+        {
+          path: "/paymentPage",
+          element: <PrivateRoute><PaymentPage></PaymentPage></PrivateRoute>,
+          // loader: ({params})=>fetch(`http://localhost:5000/session/${params.id}`)
         },
         {
           path: "/sessionCardDetails/:id",
@@ -60,6 +67,11 @@ const router = createBrowserRouter([
           path:'/dashboard/updateNotes/:id',
           element:<PrivateRoute><UpdateNote></UpdateNote></PrivateRoute>,
           loader: ({params})=>fetch(`http://localhost:5000/notes/${params.id}`)
+        },
+        {
+          path:'/dashboard/viewBookedSessionDetails/:id',
+          element:<PrivateRoute><ViewBookedSessionDetails></ViewBookedSessionDetails></PrivateRoute>,
+          loader: ({params})=>fetch(`http://localhost:5000/bookedSession/${params.id}`)
         },
         {
           path:'/dashboard/viewBookedSession',
