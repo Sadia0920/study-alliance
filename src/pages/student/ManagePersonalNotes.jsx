@@ -34,7 +34,6 @@ export default function ManagePersonalNotes() {
           text: "Your Note has been deleted.",
           icon: "success"
         });
-        // refetch()
         // const remainingNote = noteData.filter(note => note._id !== _id)
         // setNoteData(remainingNote)
           }

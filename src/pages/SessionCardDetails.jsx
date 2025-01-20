@@ -12,7 +12,7 @@ export default function SessionCardDetails() {
   const {user} = useContext(AuthContext)
   const axiosSecure = useAxiosSecure();
   const navigate = useNavigate();
-  const {_id,sessionTitle,tutorName,averageRating,sessionDescription,registrationStartDate,registrationEndDate,classStartTime,classEndDate,sessionDuration,registrationFee,reviews,bookNowStatus,additionalInfo} = loadedSessionDetails
+  const {_id,sessionTitle,tutorName,averageRating,sessionDescription,registrationStartDate,registrationEndDate,classStartTime,classEndDate,sessionDuration,registrationFee,reviews,bookNowStatus} = loadedSessionDetails
   const currentDate = new Date();
  const endDate = new Date(registrationEndDate);
  const isOngoing = currentDate <= endDate;
@@ -33,8 +33,7 @@ export default function SessionCardDetails() {
       sessionDuration,
       registrationFee,
       reviews,
-      bookNowStatus,
-      additionalInfo
+      bookNowStatus
     }
 
     // send data to the server

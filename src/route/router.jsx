@@ -92,32 +92,32 @@ const router = createBrowserRouter([
         // tutor
         {
           path:'/dashboard/createStudySession',
-          element:<CreateStudySession></CreateStudySession>,
+          element:<PrivateRoute><CreateStudySession></CreateStudySession></PrivateRoute>,
         },
         {
           path:'/dashboard/viewAllStudySessions',
-          element:<ViewAllStudySessions></ViewAllStudySessions>,
+          element:<PrivateRoute><ViewAllStudySessions></ViewAllStudySessions></PrivateRoute>,
         },
         {
           path:'/dashboard/uploadMaterials',
-          element:<UploadMaterials></UploadMaterials>,
+          element:<PrivateRoute><UploadMaterials></UploadMaterials></PrivateRoute>,
         },
         {
           path:'/dashboard/viewAllMaterials',
-          element:<ViewAllMaterials></ViewAllMaterials>,
+          element:<PrivateRoute><ViewAllMaterials></ViewAllMaterials></PrivateRoute>,
         },
         // admin
         {
           path:'/dashboard/viewAllUsers',
-          element:<ViewAllUsers></ViewAllUsers>,
+          element:<PrivateRoute><ViewAllUsers></ViewAllUsers></PrivateRoute>,
         },
         {
           path:'/dashboard/adminViewAllStudySession',
-          element:<AdminViewAllStudySession></AdminViewAllStudySession>,
+          element:<PrivateRoute><AdminViewAllStudySession></AdminViewAllStudySession></PrivateRoute>,
         },
         {
           path:'/dashboard/adminViewAllMaterials',
-          element:<AdminViewAllMaterials></AdminViewAllMaterials>,
+          element:<PrivateRoute><AdminViewAllMaterials></AdminViewAllMaterials></PrivateRoute>,
         },
       ]
     },

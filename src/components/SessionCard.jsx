@@ -3,11 +3,10 @@ import './SessionCard.css'
 import { Link } from 'react-router-dom';
 
 export default function SessionCard({item}) {
-const {_id,sessionTitle,sessionDescription,registrationEndDate,registrationStartDate} = item;
+const {_id,sessionTitle,sessionDescription,registrationEndDate} = item;
 
 const currentDate = new Date();
  const endDate = new Date(registrationEndDate);
-//  const startDate = new Date(registrationStartDate);
  const isOngoing = currentDate <= endDate;
   return (
     <div className="courseCard">
