@@ -5,7 +5,7 @@ import useNote from '../../hooks/useNote';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
 
 export default function UpdateNote() {
-    const loadData = useLoaderData()
+  const loadData = useLoaderData()
   const {_id,email,description,title} = loadData;
   const navigate = useNavigate();
   const axiosSecure = useAxiosSecure();

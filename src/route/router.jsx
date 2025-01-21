@@ -23,6 +23,7 @@ import SessionCardDetails from './../pages/SessionCardDetails';
 import UpdateNote from './../pages/student/UpdateNote';
 import PaymentPage from "../pages/PaymentPage";
 import ViewBookedSessionDetails from "../pages/student/ViewBookedSessionDetails";
+import UpdateMaterials from "../pages/tutor/UpdateMaterials";
 
 const router = createBrowserRouter([
     {
@@ -102,6 +103,11 @@ const router = createBrowserRouter([
           path:'/dashboard/uploadMaterials/:id',
           element:<PrivateRoute><UploadMaterials></UploadMaterials></PrivateRoute>,
           loader: ({params})=>fetch(`http://localhost:5000/session/${params.id}`)
+        },
+        {
+          path:'/dashboard/updateMaterials/:id',
+          element:<PrivateRoute><UpdateMaterials></UpdateMaterials></PrivateRoute>,
+          loader: ({params})=>fetch(`http://localhost:5000/materials/${params.id}`)
         },
         {
           path:'/dashboard/viewAllMaterials',
