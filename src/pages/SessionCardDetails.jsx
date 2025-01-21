@@ -12,7 +12,7 @@ export default function SessionCardDetails() {
   const {user} = useContext(AuthContext)
   const axiosSecure = useAxiosSecure();
   const navigate = useNavigate();
-  const {_id,sessionTitle,tutorName,averageRating,sessionDescription,registrationStartDate,registrationEndDate,classStartTime,classEndDate,sessionDuration,registrationFee,reviews,bookNowStatus} = loadedSessionDetails
+  const {_id,sessionTitle,tutorName,averageRating,sessionDescription,registrationStartDate,registrationEndDate,classStartTime,classEndDate,sessionDuration,registrationFee,reviews,bookNowStatus,additionalInfo} = loadedSessionDetails
   const currentDate = new Date();
  const endDate = new Date(registrationEndDate);
  const isOngoing = currentDate <= endDate;
@@ -95,11 +95,11 @@ export default function SessionCardDetails() {
     <div className="card-actions">
       {
         registrationFee == 0 ? (
-          <button onClick={handleBookedSession} disabled={isOngoing? false : true} className="btn bg-green-800 text-white">{bookNowStatus}</button>
+          <button onClick={handleBookedSession} disabled={isOngoing? false : true} className="btn bg-green-800 text-white">Book Now</button>
         )
         :
         (
-          <Link to='/paymentPage' ><button onClick={handleBookedSession} disabled={isOngoing? false : true}className="btn bg-green-800 text-white">{bookNowStatus}</button></Link>
+          <Link to='/paymentPage' ><button onClick={handleBookedSession} disabled={isOngoing? false : true}className="btn bg-green-800 text-white">Book Now</button></Link>
         )
       }
       

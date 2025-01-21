@@ -99,8 +99,9 @@ const router = createBrowserRouter([
           element:<PrivateRoute><ViewAllStudySessions></ViewAllStudySessions></PrivateRoute>,
         },
         {
-          path:'/dashboard/uploadMaterials',
+          path:'/dashboard/uploadMaterials/:id',
           element:<PrivateRoute><UploadMaterials></UploadMaterials></PrivateRoute>,
+          loader: ({params})=>fetch(`http://localhost:5000/session/${params.id}`)
         },
         {
           path:'/dashboard/viewAllMaterials',

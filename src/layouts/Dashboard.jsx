@@ -23,7 +23,7 @@ export default function Dashboard() {
                 {/* tutor */}
                 <li><NavLink to='/dashboard/createStudySession'>Create Study Session</NavLink></li>
                 <li><NavLink to='/dashboard/viewAllStudySessions'>View All Study Sessions</NavLink></li>
-                <li><NavLink to='/dashboard/uploadMaterials'>Upload Materials</NavLink></li>
+                {/* <li><NavLink to='/dashboard/uploadMaterials'>Upload Materials</NavLink></li> */}
                 <li><NavLink to='/dashboard/viewAllMaterials'>View All Materials</NavLink></li>
 
                 {/* admin */}

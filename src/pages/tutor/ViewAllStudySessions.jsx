@@ -2,11 +2,11 @@ import React from 'react'
 // import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import useSession from '../../hooks/useSession';
-import SessionCard from '../../components/SessionCard';
+import ViewAllStudySessionCard from './ViewAllStudySessionCard';
 
 export default function ViewAllStudySessions() {
   const [sessions,refetch] = useSession();
-  console.log(sessions)
+  // console.log(sessions)
   
   return (
     <div>
@@ -20,7 +20,7 @@ export default function ViewAllStudySessions() {
   <h1 className='text-3xl font-bold text-center mb-6'>All Study Session</h1>
     <div className='w-10/12 mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 mb-7'>
           {
-            sessions.map((item) => <SessionCard key={item._id} item={item}></SessionCard>)
+            sessions.map((item) => <ViewAllStudySessionCard key={item._id} item={item}></ViewAllStudySessionCard>)
           }
           </div>
   </div>
