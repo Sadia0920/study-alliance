@@ -21,10 +21,10 @@ export default function SessionCardDetails() {
   if(user && user.email){
     const bookedSession = {
       studySessionID: _id,
-      email: user.email,
+      tutorEmail: user.email,
       sessionTitle,
       tutorName,
-      averageRating,
+      // averageRating,
       sessionDescription,
       registrationStartDate,
       registrationEndDate,
@@ -32,8 +32,8 @@ export default function SessionCardDetails() {
       classEndDate,
       sessionDuration,
       registrationFee,
-      reviews,
-      bookNowStatus
+      // reviews,
+      // bookNowStatus
     }
 
     // send data to the server
@@ -73,7 +73,7 @@ export default function SessionCardDetails() {
    <div className="card-body items-center text-center">
      <h2 className="card-title text-xl font-bold text-gray-950">{sessionTitle}</h2>
      <p className="text-lg font-semibold text-gray-800">Tutor Name :<span className='text-gray-500'>{tutorName}</span></p>
-     <p className="text-lg font-semibold text-gray-800">Average Rating :<span className='text-gray-500'>{averageRating}</span></p>
+     {/* <p className="text-lg font-semibold text-gray-800">Average Rating :<span className='text-gray-500'>{averageRating}</span></p> */}
     <p className="text-lg mb-2 font-semibold text-gray-800">Session Description :<span className='text-gray-500'>{sessionDescription}</span></p>
     <p className="text-lg font-semibold text-gray-800">Registration Start Date :<span className='text-gray-500'>{registrationStartDate}</span></p>
     <p className="text-lg font-semibold text-gray-800">Registration End Date :<span className='text-gray-500'>{registrationEndDate}</span></p>
@@ -81,17 +81,17 @@ export default function SessionCardDetails() {
     <p className="text-lg mb-2 font-semibold text-gray-800">Class End Date :<span className='text-gray-500'>{classEndDate}</span></p>
     <p className="text-lg mb-2 font-semibold text-gray-800">Session Duration :<span className='text-gray-500'>{sessionDuration}</span></p>
     <p className="text-lg mb-2 font-semibold text-gray-800">Registration Fee :<span className='text-gray-500'>{registrationFee}</span></p>
-    <p className="text-lg mb-2 font-semibold text-gray-800">Reviews :</p>
-    {
+    {/* <p className="text-lg mb-2 font-semibold text-gray-800">Reviews :</p> */}
+    {/* {
       reviews.map((review,idx) => <li key={idx} className='text-gray-500'>{review}</li>)
-    }
+    } */}
     {isOngoing ? (
         <p className="text-lg mb-2 font-semibold text-gray-800">Registration Status: <strong className='text-green-600'>Ongoing</strong></p>
       ) : (
         <p className="text-lg mb-2 font-semibold text-gray-800">Registration Status: <strong className='text-red-600'>Closed</strong></p>
     )}
    
-    <p className="text-lg mb-2 font-semibold text-gray-800">Additional Info :<span className='text-gray-500'>{additionalInfo}</span></p>
+    {/* <p className="text-lg mb-2 font-semibold text-gray-800">Additional Info :<span className='text-gray-500'>{additionalInfo}</span></p> */}
     <div className="card-actions">
       {
         registrationFee == 0 ? (

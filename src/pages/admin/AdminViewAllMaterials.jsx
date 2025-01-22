@@ -14,16 +14,7 @@ export default function AdminViewAllMaterials() {
         return res.data;
     }
 })
-  const [items,setItems]=useState([])
-  const fetchAllItems = async () =>{
-    const {data} = await axiosSecure.get('/material')
-    setItems(data)
-  }
-  useEffect(()=> {
-    fetchAllItems()
-  },[])
  
-
   // delete Material
     const handleDeleteMaterials = (_id) => {
 

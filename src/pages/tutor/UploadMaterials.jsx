@@ -73,7 +73,6 @@ export default function UploadMaterials() {
 <h2 className='text-center text-4xl font-bold text-[#374151]'>Upload Materials</h2>
 <p className='text-center text-[#1B1A1AB3] w-9/12 mx-auto mt-8'>It is a dedicated area where tutor can upload session materials.</p>
     <form onSubmit={handleSubmit(onSubmit)}>
-      <input type="submit" />
       <div className='mt-6'>
         <div className='md:w-full'>
         <label className="form-control">
