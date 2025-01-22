@@ -1,4 +1,3 @@
-// UpdateMaterials
 import React, { useContext, useState } from 'react'
 import Swal from 'sweetalert2';
 import { Helmet } from 'react-helmet-async';
@@ -109,8 +108,7 @@ export default function  UpdateMaterials() {
         <div className="label">
         <span className="label-text font-bold">Image upload</span>
         </div>
-        <input {...register("image")} type="file" className="file-input file-input-bordered  w-full" name='image' required />
-        {/* <input type="text" placeholder="Enter Image Upload*" name='imageUpload' className="input input-bordered w-full" required/> */}
+        <input {...register("image")} type="file" className="file-input file-input-bordered  w-full" name='image'/>
         </label>
         </div>
      </div>
@@ -125,8 +123,7 @@ export default function  UpdateMaterials() {
         </div>
      </div>
      <div className='mt-6'>
-        {/* <button className="btn w-full font-bold border-white bg-[rgb(76,48,161)] text-white">Upload Materials</button> */}
-        <input type="submit" value="Upload Materials" className="btn w-full font-bold border-white bg-[rgb(76,48,161)] text-white" />
+        <input type="submit" value="Update Materials" className="btn w-full font-bold border-white bg-[rgb(76,48,161)] text-white" />
     </div>
     </form>
     </div>

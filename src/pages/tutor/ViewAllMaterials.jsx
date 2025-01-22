@@ -1,4 +1,3 @@
-// ViewAllMaterials
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
@@ -45,7 +44,7 @@ export default function ViewAllMaterials() {
         <title>Study Alliance | View All Materials</title>
     </Helmet>
     
-  {/* My Notes */}
+  {/* My Materials */}
 
   <div className='w-10/12 mx-auto py-7'>
   <h1 className='text-3xl font-bold text-center mb-6'>My Materials</h1>
