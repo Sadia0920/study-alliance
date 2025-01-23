@@ -6,10 +6,12 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import Swal from 'sweetalert2';
 import { AuthContext } from '../provider/AuthProvider';
 import { Helmet } from 'react-helmet-async';
+import useAxiosPublic from '../hooks/useAxiosPublic';
 
 export default function Register() {
-  const {createUser,setUser,updateUserInfo} = useContext(AuthContext);
+  const {createUser,setUser,updateUserInfo,signInWithGoogle,signInWithGithub} = useContext(AuthContext);
   const navigate = useNavigate()
+  const axiosPublic = useAxiosPublic()
   const [showPassword,setShowPassword]=useState(false)
   const [errorMessage,setErrorMessage]=useState('')
 
@@ -21,7 +23,7 @@ export default function Register() {
     const role = form.role.value;
     const email = form.email.value;
     const password = form.password.value;
-    const newUser = {name,photo,role,email,password}
+    const newUser = {name,role,email}
   // console.log(newUser);
 
     setErrorMessage('')
@@ -43,14 +45,15 @@ export default function Register() {
     createUser(email,password)
     .then(result => {
       setUser(result.user)
-      form.reset();
-      navigate('/')
-      Swal.fire({
-        title: 'Success',
-        text: 'Register Successfully',
-        icon: 'success',
-        confirmButtonText: 'Done'
-      })
+      // form.reset();
+      // navigate('/')
+      // Swal.fire({
+      //   title: 'Success',
+      //   text: 'Register Successfully',
+      //   icon: 'success',
+      //   confirmButtonText: 'Done'
+      // })
+
       // UpdateUser
     const profile = {
       displayName: name,
@@ -58,10 +61,25 @@ export default function Register() {
     }
     updateUserInfo(profile)
     .then((res)=>{
-      console.log(res.user)
+      axiosPublic.post('/users', newUser)
+      .then(res => {
+      if(res.data.insertedId){
+        console.log('user added to the database');
+        form.reset();
+        Swal.fire({
+          title: 'Success',
+          text: 'User Registered Successfully',
+          icon: 'success',
+          confirmButtonText: 'Done'
+        })
+        navigate('/')
+      // refetch()
+      }
+      // console.log(res.user)
     })
     .catch(error => {
       setErrorMessage(error.message)
+    })
     })
     })
     .catch(error => {
@@ -74,8 +92,49 @@ export default function Register() {
         icon: 'error',
         confirmButtonText: 'Ok'
       })
-    })
+     })
   }
+
+  const handleGoogleLogin = () => {
+      signInWithGoogle()
+      .then(result => {
+        // console.log(result.user)
+        setUser(result.user)
+        console.log(result.user)
+        Swal.fire({
+          title: 'Success',
+          text: 'Login With Google Successfully',
+          icon: 'success',
+          confirmButtonText: 'Done'
+        })
+        navigate('/')
+      })
+      .catch(error => {
+        // console.log(error)
+        setUser(null)
+      })
+    }
+
+    const handleGithubLogin = () => {
+       signInWithGithub()
+          .then(result => {
+            // console.log(result.user)
+            setUser(result.user)
+            console.log(result.user)
+            Swal.fire({
+              title: 'Success',
+              text: 'Login With Github Successfully',
+              icon: 'success',
+              confirmButtonText: 'Done'
+            })
+            navigate('/')
+          })
+          .catch(error => {
+            // console.log(error)
+            setUser(null)
+          })
+    }
+
   return (
     <div className='py-10'>
     <Helmet>
@@ -106,11 +165,11 @@ export default function Register() {
         <label className="label">
             <span className="label-text">Role</span>
           </label> 
-        <select className="select select-bordered w-full" name='role' required type='text'>
-        <option disabled selected>select role</option>
-        <option>Student</option>
-        <option>Tutor</option>
-        <option>Admin</option>
+        <select defaultValue="default" className="select select-bordered w-full" name='role' required type='text'>
+        <option disabled value="default">select role</option>
+        <option value="student">Student</option>
+        <option value="tutor">Tutor</option>
+        <option value="admin">Admin</option>
         </select>
         </div>
 
@@ -133,6 +192,9 @@ export default function Register() {
           <p className='text-center mt-4'>Already have an account? <NavLink to='/login' className='text-[rgb(76,48,161)]'>Login</NavLink></p>
         </div>
       </form>
+      <div className="divider w-11/12 mx-auto">OR</div>
+      <button onClick={handleGoogleLogin} className="btn bg-[rgb(76,48,161)] text-white w-11/12 mx-auto mt-6"><i className="fa-brands fa-google"></i>Google Login</button>
+      <button onClick={handleGithubLogin} className="btn bg-[rgb(76,48,161)] text-white w-11/12 mx-auto mt-6"><i className="fa-brands fa-github"></i>Github Login</button>
     </div>
   </div>
 </div>

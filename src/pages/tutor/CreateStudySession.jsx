@@ -19,18 +19,6 @@ export default function CreateStudySession() {
   const navigate = useNavigate()
 
   const handleAddStudySession = (event) => {
-   
-    // Session Title
-    // Tutor name read-only ( Logged in user name )
-    // Tutor email read-only ( Logged in user email)
-      // session Description
-// Registration start date
-// Registration end date
-// Class start date
-// Class end date
-// Session duration
-// Registration fee read-only ( default 0 ) ( only  admin can modify this field, just set it to 0 )
-// Status ( default pending )
 
     event.preventDefault();
     const form = event.target;

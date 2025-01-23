@@ -11,7 +11,7 @@ import { Helmet } from 'react-helmet-async';
 // import axios from 'axios';
 
 export default function Login() {
-  const {signInUser,signInWithGoogle,setUser} = useContext(AuthContext);
+  const {signInUser,signInWithGoogle,setUser,signInWithGithub} = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/"
@@ -58,7 +58,27 @@ export default function Login() {
       console.log(result.user)
       Swal.fire({
         title: 'Success',
-        text: 'Login successfully',
+        text: 'Login With Google Successfully',
+        icon: 'success',
+        confirmButtonText: 'Done'
+      })
+      navigate('/')
+    })
+    .catch(error => {
+      // console.log(error)
+      setUser(null)
+    })
+  }
+
+  const handleGithubLogin = () => {
+    signInWithGithub()
+    .then(result => {
+      // console.log(result.user)
+      setUser(result.user)
+      console.log(result.user)
+      Swal.fire({
+        title: 'Success',
+        text: 'Login With Github Successfully',
         icon: 'success',
         confirmButtonText: 'Done'
       })
@@ -106,6 +126,7 @@ export default function Login() {
       </form>
       <div className="divider w-11/12 mx-auto">OR</div>
       <button onClick={handleGoogleLogin} className="btn bg-[rgb(76,48,161)] text-white w-11/12 mx-auto mt-6"><i className="fa-brands fa-google"></i>Google Login</button>
+      <button onClick={handleGithubLogin} className="btn bg-[rgb(76,48,161)] text-white w-11/12 mx-auto mt-6"><i className="fa-brands fa-github"></i>Github Login</button>
     </div>
   </div>
 </div>
