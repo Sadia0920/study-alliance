@@ -6,13 +6,15 @@ import { AuthContext } from '../provider/AuthProvider';
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import Swal from 'sweetalert2';
 import { Helmet } from 'react-helmet-async';
+import useAxiosPublic from '../hooks/useAxiosPublic';
 // import db from "../firebase/firebase.init";
 // import { get, ref, set } from 'firebase/database';
 // import axios from 'axios';
 
 export default function Login() {
-  const {signInUser,signInWithGoogle,setUser,signInWithGithub} = useContext(AuthContext);
+  const {signInUser,signInWithGoogle,setUser} = useContext(AuthContext);
   const navigate = useNavigate();
+  const axiosPublic = useAxiosPublic()
   const location = useLocation();
   const from = location.state?.from?.pathname || "/"
   const [showPassword,setShowPassword]=useState(false)
@@ -50,19 +52,49 @@ export default function Login() {
       })
     })
   }
+
+  // const handleGoogleLogin = () => {
+  //   signInWithGoogle()
+  //   .then(result => {
+  //     setUser(result.user)
+  //     console.log(result.user)
+  //       Swal.fire({
+  //         title: 'Success',
+  //         text: 'Login With Google Successfully',
+  //         icon: 'success',
+  //         confirmButtonText: 'Done'
+  //       })
+  //       // navigate(from, {replace: true});
+  //       navigate('/');
+  //     })
+  //   .catch(error => {
+  //     // console.log(error)
+  //     setUser(null)
+  //   })
+  // }
+
   const handleGoogleLogin = () => {
     signInWithGoogle()
     .then(result => {
-      // console.log(result.user)
       setUser(result.user)
-      console.log(result.user)
-      Swal.fire({
-        title: 'Success',
-        text: 'Login With Google Successfully',
-        icon: 'success',
-        confirmButtonText: 'Done'
+      // console.log(result.user)
+      const userInfo = {
+        email: result.user?.email,
+        name: result.user?.displayName,
+        role: 'student'
+      }
+      axiosPublic.post('/users', userInfo)
+      .then(res => {
+        // console.log(res.data)
+        Swal.fire({
+          title: 'Success',
+          text: 'Login With Google Successfully',
+          icon: 'success',
+          confirmButtonText: 'Done'
+        })
+        navigate(from, {replace: true});
+        // navigate('/');
       })
-      navigate('/')
     })
     .catch(error => {
       // console.log(error)
@@ -70,25 +102,25 @@ export default function Login() {
     })
   }
 
-  const handleGithubLogin = () => {
-    signInWithGithub()
-    .then(result => {
-      // console.log(result.user)
-      setUser(result.user)
-      console.log(result.user)
-      Swal.fire({
-        title: 'Success',
-        text: 'Login With Github Successfully',
-        icon: 'success',
-        confirmButtonText: 'Done'
-      })
-      navigate('/')
-    })
-    .catch(error => {
-      // console.log(error)
-      setUser(null)
-    })
-  }
+  // const handleGithubLogin = () => {
+  //   signInWithGithub()
+  //  .then(result => {
+  //     // console.log(result.user)
+  //     setUser(result.user)
+  //     console.log(result.user)
+  //     Swal.fire({
+  //       title: 'Success',
+  //       text: 'Login With Github Successfully',
+  //       icon: 'success',
+  //       confirmButtonText: 'Done'
+  //     })
+  //     navigate('/')
+  //     })
+  //     .catch(error => {
+  //     // console.log(error)
+  //     setUser(null)
+  //     })
+  // }
   
   return (
     <div className='py-10'>
@@ -126,7 +158,7 @@ export default function Login() {
       </form>
       <div className="divider w-11/12 mx-auto">OR</div>
       <button onClick={handleGoogleLogin} className="btn bg-[rgb(76,48,161)] text-white w-11/12 mx-auto mt-6"><i className="fa-brands fa-google"></i>Google Login</button>
-      <button onClick={handleGithubLogin} className="btn bg-[rgb(76,48,161)] text-white w-11/12 mx-auto mt-6"><i className="fa-brands fa-github"></i>Github Login</button>
+      {/* <button onClick={handleGithubLogin} className="btn bg-[rgb(76,48,161)] text-white w-11/12 mx-auto mt-6"><i className="fa-brands fa-github"></i>Github Login</button> */}
     </div>
   </div>
 </div>

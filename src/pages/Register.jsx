@@ -1,4 +1,4 @@
-import { NavLink, Link, useNavigate } from 'react-router-dom'
+import { NavLink, Link, useNavigate, useLocation } from 'react-router-dom'
 import Lottie from "lottie-react";
 import registerLottieData from "../assets/animation/Animation-4.json"
 import React, { useContext, useState } from 'react'
@@ -9,11 +9,13 @@ import { Helmet } from 'react-helmet-async';
 import useAxiosPublic from '../hooks/useAxiosPublic';
 
 export default function Register() {
-  const {createUser,setUser,updateUserInfo,signInWithGoogle,signInWithGithub} = useContext(AuthContext);
+  const {createUser,setUser,updateUserInfo,signInWithGoogle} = useContext(AuthContext);
   const navigate = useNavigate()
   const axiosPublic = useAxiosPublic()
   const [showPassword,setShowPassword]=useState(false)
   const [errorMessage,setErrorMessage]=useState('')
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/"
 
   const handleCreateUser = (event) => {
     event.preventDefault()
@@ -64,7 +66,7 @@ export default function Register() {
       axiosPublic.post('/users', newUser)
       .then(res => {
       if(res.data.insertedId){
-        console.log('user added to the database');
+        // console.log('user added to the database');
         form.reset();
         Swal.fire({
           title: 'Success',
@@ -72,7 +74,7 @@ export default function Register() {
           icon: 'success',
           confirmButtonText: 'Done'
         })
-        navigate('/')
+        navigate(from, {replace: true});
       // refetch()
       }
       // console.log(res.user)
@@ -95,19 +97,49 @@ export default function Register() {
      })
   }
 
+  // const handleGoogleLogin = () => {
+  //     signInWithGoogle()
+  //     .then(result => {
+  //       setUser(result.user)
+  //       console.log(result.user)
+  //         Swal.fire({
+  //           title: 'Success',
+  //           text: 'Login With Google Successfully',
+  //           icon: 'success',
+  //           confirmButtonText: 'Done'
+  //         })
+  //         // navigate(from, {replace: true});
+  //         navigate('/');
+  //       })
+  
+  //     .catch(error => {
+  //       // console.log(error)
+  //       setUser(null)
+  //     })
+  //   }
+
   const handleGoogleLogin = () => {
       signInWithGoogle()
       .then(result => {
-        // console.log(result.user)
         setUser(result.user)
-        console.log(result.user)
-        Swal.fire({
-          title: 'Success',
-          text: 'Login With Google Successfully',
-          icon: 'success',
-          confirmButtonText: 'Done'
+        // console.log(result.user)
+        const userInfo = {
+          email: result.user?.email,
+          name: result.user?.displayName,
+          role: 'student'
+        }
+        axiosPublic.post('/users', userInfo)
+        .then(res => {
+          console.log(res.data)
+          Swal.fire({
+            title: 'Success',
+            text: 'Login With Google Successfully',
+            icon: 'success',
+            confirmButtonText: 'Done'
+          })
+          navigate(from, {replace: true});
+          // navigate('/');
         })
-        navigate('/')
       })
       .catch(error => {
         // console.log(error)
@@ -115,25 +147,25 @@ export default function Register() {
       })
     }
 
-    const handleGithubLogin = () => {
-       signInWithGithub()
-          .then(result => {
-            // console.log(result.user)
-            setUser(result.user)
-            console.log(result.user)
-            Swal.fire({
-              title: 'Success',
-              text: 'Login With Github Successfully',
-              icon: 'success',
-              confirmButtonText: 'Done'
-            })
-            navigate('/')
-          })
-          .catch(error => {
-            // console.log(error)
-            setUser(null)
-          })
-    }
+    // const handleGithubLogin = () => {
+    //    signInWithGithub()
+    //       .then(result => {
+    //         // console.log(result.user)
+    //         setUser(result.user)
+    //         console.log(result.user)
+    //         Swal.fire({
+    //           title: 'Success',
+    //           text: 'Login With Github Successfully',
+    //           icon: 'success',
+    //           confirmButtonText: 'Done'
+    //         })
+    //         navigate('/')
+    //       })
+    //       .catch(error => {
+    //         // console.log(error)
+    //         setUser(null)
+    //       })
+    // }
 
   return (
     <div className='py-10'>
@@ -194,7 +226,7 @@ export default function Register() {
       </form>
       <div className="divider w-11/12 mx-auto">OR</div>
       <button onClick={handleGoogleLogin} className="btn bg-[rgb(76,48,161)] text-white w-11/12 mx-auto mt-6"><i className="fa-brands fa-google"></i>Google Login</button>
-      <button onClick={handleGithubLogin} className="btn bg-[rgb(76,48,161)] text-white w-11/12 mx-auto mt-6"><i className="fa-brands fa-github"></i>Github Login</button>
+      {/* <button onClick={handleGithubLogin} className="btn bg-[rgb(76,48,161)] text-white w-11/12 mx-auto mt-6"><i className="fa-brands fa-github"></i>Github Login</button> */}
     </div>
   </div>
 </div>
