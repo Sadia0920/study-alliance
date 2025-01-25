@@ -7,9 +7,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import Swal from 'sweetalert2';
 import { Helmet } from 'react-helmet-async';
 import useAxiosPublic from '../hooks/useAxiosPublic';
-// import db from "../firebase/firebase.init";
-// import { get, ref, set } from 'firebase/database';
-// import axios from 'axios';
+
 
 export default function Login() {
   const {signInUser,signInWithGoogle,setUser} = useContext(AuthContext);
@@ -30,7 +28,7 @@ export default function Login() {
     // SignInUser
     signInUser(email,password)
     .then(result => {
-      console.log(result.user)
+      // console.log(result.user)
       setUser(result.user)
       Swal.fire({
         title: 'Success',

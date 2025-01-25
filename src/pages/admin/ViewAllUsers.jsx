@@ -2,17 +2,19 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
+//import useAxiosPublic from '../../hooks/useAxiosPublic';
 import { useQuery } from '@tanstack/react-query';
 import Swal from 'sweetalert2';
 
 export default function ViewAllUsers() {
 
   const axiosSecure = useAxiosSecure();
+  //const axiosPublic = useAxiosPublic();
   const { refetch, data: users=[] } = useQuery({
     queryKey: ['users'],
     queryFn: async()=>{
-        const res = await axiosSecure.get(`/users`)
-        return res.data;
+      const res = await axiosSecure.get('/users')
+      return res.data;
     }
 })
 
@@ -24,7 +26,7 @@ const handleMakeTutor = (user) => {
       refetch()
       Swal.fire({
         title: 'Success',
-        text: `${user.name} is an tutor now`,
+        text: `${user.name} is a tutor now`,
         icon: 'success',
         confirmButtonText: 'Ok'
       })
@@ -40,7 +42,7 @@ const handleMakeStudent = (user) => {
       refetch()
       Swal.fire({
         title: 'Success',
-        text: `${user.name} is an student now`,
+        text: `${user.name} is a student now`,
         icon: 'success',
         confirmButtonText: 'Ok'
       })
