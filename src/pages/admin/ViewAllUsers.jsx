@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
 import { useQuery } from '@tanstack/react-query';
-// import Swal from 'sweetalert2';
+import Swal from 'sweetalert2';
 
 export default function ViewAllUsers() {
 
@@ -15,14 +15,46 @@ export default function ViewAllUsers() {
         return res.data;
     }
 })
+
+const handleMakeTutor = (user) => {
+  axiosSecure.patch(`/users/tutor/${user._id}`)
+  .then(res => {
+    console.log(res.data)
+    if(res.data.modifiedCount > 0){
+      refetch()
+      Swal.fire({
+        title: 'Success',
+        text: `${user.name} is an tutor now`,
+        icon: 'success',
+        confirmButtonText: 'Ok'
+      })
+    }
+  })
+}
+
+const handleMakeStudent = (user) => {
+  axiosSecure.patch(`/users/student/${user._id}`)
+  .then(res => {
+    console.log(res.data)
+    if(res.data.modifiedCount > 0){
+      refetch()
+      Swal.fire({
+        title: 'Success',
+        text: `${user.name} is an student now`,
+        icon: 'success',
+        confirmButtonText: 'Ok'
+      })
+    }
+  })
+}
   
   return (
     <div>
     <Helmet>
-        <title>Study Alliance | View All Users</title>
+      <title>Study Alliance | View All Users</title>
     </Helmet>
     
-  {/* My Materials */}
+  {/* Users */}
 
   <div className='w-10/12 mx-auto py-7'>
   <h1 className='text-3xl font-bold text-center mb-6'>All Users</h1>
@@ -35,23 +67,29 @@ export default function ViewAllUsers() {
       <th>Name</th>
       <th>Email</th>
       <th>Role</th>
-      <th>Action</th>
       </tr>
     </thead>
     <tbody> 
-    {/* row 1 */}
+    {/* row */}
     {
       users.map((user,idx) =>  <tr key={user._id}>
       <th>{idx + 1}</th>
       <td>{user.name}</td>
-      <td>{user.email}</td>
-      <td>{user.role}</td>
-      <td>
 
-      {/* update button */}
-      <Link><button className='btn mb-2'><i className="fa-regular fa-pen-to-square"></i></button></Link>
-      {/* <Link to={`/dashboard/updateMaterials/${item._id}`}><button className='btn mb-2'><i className="fa-regular fa-pen-to-square"></i></button></Link> */}
-     
+      <td>{user.email}</td>
+      <td>
+        {
+          user.role === 'admin' ? 'Admin' : 
+          <>
+          {
+            user.role === 'tutor' ? 
+            <button onClick={()=> handleMakeStudent(user)} className='btn mb-2'><i className="fa-solid fa-user"></i>{user.role}</button>
+            :
+            <button onClick={()=> handleMakeTutor(user)} className='btn mb-2'><i className="fa-solid fa-users"></i>{user.role}</button>
+          }
+          </>
+  
+        }
       </td>
       </tr>)
     }
