@@ -4,18 +4,21 @@ import { useContext } from 'react';
 import { AuthContext } from './../provider/AuthProvider';
 import useAxiosSecure from '../hooks/useAxiosSecure';
 import Swal from 'sweetalert2';
-// import useAxiosSecure from '../../hooks/useAxiosSecure';
+import useAdmin from '../hooks/useAdmin';
+import useTutor from '../hooks/useTutor';
 
 export default function SessionCardDetails() {
-  
+  const [isAdmin] = useAdmin();
+  const [isTutor] = useTutor();
   const loadedSessionDetails = useLoaderData()
   const {user} = useContext(AuthContext)
   const axiosSecure = useAxiosSecure();
   const navigate = useNavigate();
   const {_id,sessionTitle,tutorName,averageRating,sessionDescription,registrationStartDate,registrationEndDate,classStartTime,classEndDate,sessionDuration,registrationFee,reviews,bookNowStatus,additionalInfo} = loadedSessionDetails
-  const currentDate = new Date();
+ const currentDate = new Date();
  const endDate = new Date(registrationEndDate);
  const isOngoing = currentDate <= endDate;
+ const isButtonDisabled = (isAdmin || isTutor || !isOngoing)
 
  const handleBookedSession = session => {
   if(user && user.email){
@@ -95,11 +98,12 @@ export default function SessionCardDetails() {
     <div className="card-actions">
       {
         registrationFee == 0 ? (
-          <button onClick={handleBookedSession} disabled={isOngoing? false : true} className="btn bg-green-800 text-white">Book Now</button>
+          <button onClick={handleBookedSession}  disabled={isButtonDisabled} className="btn bg-green-800 text-white">{isOngoing? 
+          'Book Now' : 'Registration Closed'}</button>
         )
         :
         (
-          <Link to='/paymentPage' ><button onClick={handleBookedSession} disabled={isOngoing? false : true}className="btn bg-green-800 text-white">Book Now</button></Link>
+          <Link to='/paymentPage' ><button onClick={handleBookedSession} disabled={isButtonDisabled} className="btn bg-green-800 text-white">{isOngoing? 'Book Now' : 'Registration Closed'}</button></Link>
         )
       }
       
