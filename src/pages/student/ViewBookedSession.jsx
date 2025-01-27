@@ -8,6 +8,7 @@ import BookedSessionCard from '../../components/BookedSessionCard';
 export default function ViewBookedSession() {
 //   const axiosSecure = useAxiosSecure();
   const [bookedSession,refetch] = useBookedSession();
+  // console.log(bookedSession.length)
   
   return (
     <div>

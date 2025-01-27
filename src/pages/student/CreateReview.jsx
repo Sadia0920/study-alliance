@@ -2,10 +2,12 @@ import React, { useContext } from 'react'
 import Swal from 'sweetalert2';
 import { AuthContext } from '../../provider/AuthProvider';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
+import useReview from '../../hooks/useReview';
 
 export default function CreateReview({loadedViewSessionDetails}) {
    const{studySessionID}=loadedViewSessionDetails
    const {user} = useContext(AuthContext);
+   const [, refetch] = useReview();
    const axiosSecure = useAxiosSecure()
   const handleCreateReview = (event) => {
    
@@ -13,7 +15,7 @@ export default function CreateReview({loadedViewSessionDetails}) {
     const form = event.target;
     const review = form.review.value;
     const rate = form.rate.value;
-    const rating = Number(rate)
+    const rating = parseFloat(rate)
     const newData = {
         studySessionID,
         review,
@@ -33,7 +35,7 @@ export default function CreateReview({loadedViewSessionDetails}) {
                   icon: 'success',
                   confirmButtonText: 'Ok'
                 })
-                // refetch()
+                refetch()
           }
           form.reset()
       })
@@ -60,7 +62,7 @@ export default function CreateReview({loadedViewSessionDetails}) {
                 <div className="label">
                 <span className="label-text font-bold">Review</span>
                 </div>
-                <input type="text" placeholder="Enter Review*" name='review' className="input input-bordered w-full" />
+                <textarea type="text" placeholder="Enter Review*" name='review' className="textarea" required></textarea>
                 </label>
             </div>
         </div>
@@ -70,7 +72,7 @@ export default function CreateReview({loadedViewSessionDetails}) {
                 <div className="label">
                 <span className="label-text font-bold">Rating</span>
                 </div>
-                <textarea type="number" placeholder="Enter Rating*" name='rate' className="textarea" required></textarea>
+                <input type="number" placeholder="Enter Rating*" name='rate' className="input input-bordered w-full" />
                 </label>
             </div>
         </div>

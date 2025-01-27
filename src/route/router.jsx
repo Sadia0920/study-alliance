@@ -24,6 +24,7 @@ import UpdateNote from './../pages/student/UpdateNote';
 import PaymentPage from "../pages/PaymentPage";
 import ViewBookedSessionDetails from "../pages/student/ViewBookedSessionDetails";
 import UpdateMaterials from "../pages/tutor/UpdateMaterials";
+import AdminRoute from "./AdminRoute";
 
 const router = createBrowserRouter([
     {
@@ -61,7 +62,7 @@ const router = createBrowserRouter([
       errorElement: <Error></Error>,
       children: [
         {
-          path:'/dashboard/about',
+          path:'/dashboard',
           element:<About></About>,
         },
         {
@@ -116,15 +117,15 @@ const router = createBrowserRouter([
         // admin
         {
           path:'/dashboard/viewAllUsers',
-          element:<PrivateRoute><ViewAllUsers></ViewAllUsers></PrivateRoute>,
+          element:<AdminRoute><ViewAllUsers></ViewAllUsers></AdminRoute>,
         },
         {
           path:'/dashboard/adminViewAllStudySession',
-          element:<PrivateRoute><AdminViewAllStudySession></AdminViewAllStudySession></PrivateRoute>,
+          element:<AdminRoute><AdminViewAllStudySession></AdminViewAllStudySession></AdminRoute>,
         },
         {
           path:'/dashboard/adminViewAllMaterials',
-          element:<PrivateRoute><AdminViewAllMaterials></AdminViewAllMaterials></PrivateRoute>,
+          element:<AdminRoute><AdminViewAllMaterials></AdminViewAllMaterials></AdminRoute>,
         },
       ]
     },

@@ -3,7 +3,7 @@ import { AuthContext } from '../provider/AuthProvider';
 import useTutor from '../hooks/useTutor';
 import { Navigate, useLocation } from "react-router-dom"
 
-export default function TutorRoute({childern}) {
+export default function TutorRoute({children}) {
     const {user,loading} = useContext(AuthContext)
     const location = useLocation();
     const [isTutor,isTutorLoading] = useTutor()
