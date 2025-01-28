@@ -9,7 +9,6 @@ export default function ManagePersonalNotes() {
 
   const axiosSecure = useAxiosSecure();
   const [note,refetch] = useNote();
-  // const [noteData,setNoteData]=useState(note)
 
   // delete note
     const handleDeleteNote = (_id) => {
@@ -56,7 +55,7 @@ export default function ManagePersonalNotes() {
     <table className="table">
     {/* head */}
     <thead>
-      <tr>
+      <tr className='text-gray-400'>
       <th>#</th>
       <th>Email</th>
       <th>Title</th>
@@ -77,7 +76,7 @@ export default function ManagePersonalNotes() {
       {/* update button */}
       <Link to={`/dashboard/updateNotes/${item._id}`}><button className='btn mr-2'><i className="fa-regular fa-pen-to-square"></i></button></Link>
       {/* delete button */}
-      <button onClick={()=>handleDeleteNote(item._id)} className='btn'><i className="fa-regular fa-trash-can"></i></button> 
+      <button onClick={()=>handleDeleteNote(item._id)} className='btn mt-2 lg:mt-0'><i className="fa-regular fa-trash-can"></i></button> 
       </td>
       </tr>)
     }

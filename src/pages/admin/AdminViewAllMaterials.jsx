@@ -38,8 +38,7 @@ export default function AdminViewAllMaterials() {
           text: "Materials has been deleted.",
           icon: "success"
         });
-        // const remainingItems = items.filter(item => item._id !== _id)
-        // setPostData(remainingItems)
+       
         }
         })
       }
@@ -59,7 +58,7 @@ export default function AdminViewAllMaterials() {
     <table className="table">
     {/* head */}
     <thead>
-      <tr>
+      <tr className='text-gray-400'>
       <th>#</th>
       <th>Image</th>
       <th>Title</th>

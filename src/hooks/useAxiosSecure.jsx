@@ -4,7 +4,7 @@ import { useContext } from 'react'
 import { AuthContext } from '../provider/AuthProvider'
 
 export const axiosSecure = axios.create({
-    baseURL: 'http://localhost:5000'
+    baseURL: 'https://study-alliance-server-virid.vercel.app'
 }) 
 
 export default function useAxiosSecure() {

@@ -2,14 +2,12 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
-//import useAxiosPublic from '../../hooks/useAxiosPublic';
 import { useQuery } from '@tanstack/react-query';
 import Swal from 'sweetalert2';
 
 export default function ViewAllUsers() {
 
   const axiosSecure = useAxiosSecure();
-  //const axiosPublic = useAxiosPublic();
   const { refetch, data: users=[] } = useQuery({
     queryKey: ['users'],
     queryFn: async()=>{
@@ -21,7 +19,7 @@ export default function ViewAllUsers() {
 const handleMakeTutor = (user) => {
   axiosSecure.patch(`/users/tutor/${user._id}`)
   .then(res => {
-    console.log(res.data)
+    // console.log(res.data)
     if(res.data.modifiedCount > 0){
       refetch()
       Swal.fire({
@@ -37,7 +35,7 @@ const handleMakeTutor = (user) => {
 const handleMakeStudent = (user) => {
   axiosSecure.patch(`/users/student/${user._id}`)
   .then(res => {
-    console.log(res.data)
+    // console.log(res.data)
     if(res.data.modifiedCount > 0){
       refetch()
       Swal.fire({
@@ -64,7 +62,7 @@ const handleMakeStudent = (user) => {
     <table className="table">
     {/* head */}
     <thead>
-      <tr>
+      <tr className='text-gray-400'>
       <th>#</th>
       <th>Name</th>
       <th>Email</th>
@@ -78,7 +76,6 @@ const handleMakeStudent = (user) => {
       users.map((user,idx) =>  <tr key={user._id}>
       <th>{idx + 1}</th>
       <td>{user.name}</td>
-
       <td>{user.email}</td>
       <td>
         {
@@ -91,7 +88,6 @@ const handleMakeStudent = (user) => {
            'Student'
           }
           </>
-  
         }
       </td>
       <td>
@@ -105,7 +101,6 @@ const handleMakeStudent = (user) => {
             <button onClick={()=> handleMakeTutor(user)} className='btn mb-2'>Update</button>
           }
           </>
-  
         }
       </td>
       </tr>)

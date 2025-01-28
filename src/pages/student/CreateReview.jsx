@@ -27,7 +27,7 @@ export default function CreateReview({loadedViewSessionDetails}) {
     try{
         axiosSecure.post('/reviews', newData)
         .then(res => {
-        console.log(res.data)
+        // console.log(res.data)
           if(res.data.insertedId){
               Swal.fire({
                   title: 'Success',

@@ -3,7 +3,7 @@
 ### Admin username: Kalpana Khan
 ### Password: Kalpana1
 
-### Live Site URL: 
+### Live Site URL: https://study-alliance-83c26.web.app
 
 ### Features(10 points at least):
 - theere are three roles in our website - student , tutor , admin.

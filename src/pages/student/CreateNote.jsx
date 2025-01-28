@@ -25,7 +25,7 @@ export default function CreateNote() {
     try{
         axiosSecure.post('/notes', newNote)
         .then(res => {
-        console.log(res.data)
+        // console.log(res.data)
           if(res.data.insertedId){
               Swal.fire({
                   title: 'Success',

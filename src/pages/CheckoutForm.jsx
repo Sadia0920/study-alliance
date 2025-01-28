@@ -1,11 +1,14 @@
 import React, { useState, useEffect, useContext } from 'react'
+import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router-dom'
 import {CardElement, Elements, useElements, useStripe} from '@stripe/react-stripe-js';
 import useAxiosSecure from '../hooks/useAxiosSecure';
 import useSession from '../hooks/useSession';
 import { AuthContext } from '../provider/AuthProvider';
 
 export default function CheckoutForm({loadedSessionDetails}) {
-const {registrationFee} = loadedSessionDetails
+  const {_id,sessionTitle,tutorName,tutorEmail,averageRating,sessionDescription,registrationStartDate,registrationEndDate,classStartDate,classEndDate,sessionDuration,registrationFee} = loadedSessionDetails
+// console.log(registrationFee)
 const stripe = useStripe();
 const elements = useElements();
 const [error,setError]=useState('');
@@ -13,11 +16,12 @@ const [transactionId,setTransactionId]=useState('');
 const [clientSecret,setClientSecret]=useState('');
 const axiosSecure = useAxiosSecure();
 const {user}=useContext(AuthContext);
+const navigate = useNavigate();
 
 useEffect(()=>{
     axiosSecure.post('/create-payment-intent',{registrationFee: registrationFee})
     .then(res => {
-        console.log(res.data.clientSecret)
+        // console.log(res.data.clientSecret)
         setClientSecret(res.data.clientSecret)
     })
 },[axiosSecure,registrationFee])
@@ -36,11 +40,11 @@ const handleSubmit = async (event) => {
         card,
     });
     if(error){
-    console.log('payment error',error)
+    // console.log('payment error',error)
     setError(error.message)
     }
     else{
-    console.log('payment method',paymentMethod)
+    // console.log('payment method',paymentMethod)
     setError('');
     }
 
@@ -54,15 +58,55 @@ const handleSubmit = async (event) => {
         }
     })
     if(confirmError){
-        console.log('Confirm Error')
+        // console.log('Confirm Error')
     }
     else{
-        console.log('payment intent',paymentIntent)
+        // console.log('payment intent',paymentIntent)
         if(paymentIntent.status === 'succeeded'){
             console.log('transaction id',paymentIntent.id)
             setTransactionId(paymentIntent.id)
 
-            
+            if(user && user.email){
+              const bookedSession = {
+                studySessionID: _id,
+                studentEmail: user.email,
+                sessionTitle,
+                tutorName,
+                tutorEmail,
+                sessionDescription,
+                registrationStartDate,
+                registrationEndDate,
+                classStartDate,
+                classEndDate,
+                sessionDuration,
+                registrationFee,
+              }
+          
+              // send data to the server
+                 try{
+                     axiosSecure.post('/bookedSession', bookedSession)
+                     .then(res => {
+                    //  console.log(res.data)
+                       if(res.data.insertedId){
+                           Swal.fire({
+                               title: 'Success',
+                               text: 'Booked Session successfully',
+                               icon: 'success',
+                               confirmButtonText: 'Ok'
+                             })
+                       }
+                       navigate('/dashboard/viewBookedSession')
+                   })
+                 }
+                 catch (err) {
+                     Swal.fire({
+                         title: 'Error',
+                         text: 'Booked Session error',
+                         icon: 'error',
+                         confirmButtonText: 'Ok'
+                       })
+                 }
+            }
         }
     }
 }
@@ -86,7 +130,7 @@ const handleSubmit = async (event) => {
           },
         }}
       />
-      <button classname='btn btn-sm bg-purple-500 text-white my-4' type="submit" disabled={!stripe || !clientSecret}>
+      <button className='btn bg-[rgb(76,48,161)] text-white my-4' type="submit" disabled={!stripe || !clientSecret}>
         Pay
       </button>
       <p className='text-red-600 '>{error}</p>

@@ -52,7 +52,7 @@ export default function ViewAllMaterials() {
     <table className="table">
     {/* head */}
     <thead>
-      <tr>
+      <tr className='text-gray-400'>
       <th>#</th>
       <th>Image</th>
       <th>Title</th>

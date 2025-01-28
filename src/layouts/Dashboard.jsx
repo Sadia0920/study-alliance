@@ -5,7 +5,7 @@ import useAdmin from '../hooks/useAdmin';
 import useTutor from '../hooks/useTutor';
 
 export default function Dashboard() {
-  // ToDo get isAdmin Value from the database
+  
   const [isAdmin] = useAdmin();
   const [isTutor] = useTutor();
   return (
@@ -13,8 +13,8 @@ export default function Dashboard() {
       <Helmet>
         <title>Study Alliance | Dashboard</title>
       </Helmet>
-    <div className='flex'>
-    <div className='w-64 min-h-screen bg-slate-300'>
+    <div className='md:flex'>
+    <div className='lg:w-64 w-42 md:min-h-screen bg-slate-300'>
       <ul className='menu'>
       <li><NavLink to='/dashboard'><i className="fa-solid fa-circle-info"></i>About</NavLink></li>
         <li><NavLink to='/'><i className="fa-solid fa-house"></i>Home</NavLink></li>

@@ -1,5 +1,5 @@
 .courseCard {
-    width: 350px;
+    width: 330px;
     border: 2px solid rgb(221, 221, 221);
     border-radius: 8px;
     padding: 20px;
@@ -34,7 +34,7 @@
   }
   
   .courseCard-description {
-    color:rgb(85, 85, 85);
+    /* color: black; */
     font-size: 14px;
     font-weight: bold;
     margin: 10px 0;

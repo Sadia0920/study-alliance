@@ -13,6 +13,7 @@ export default function About() {
       With Study Alliance, Weather yoy're a student seeking support , an admin managing resources, or a tutor providing guidance, we make it easy to connect , communicate, and thrive.
       <br></br>
 Our platform offers a verity of tools and features, including personalized tutoring sessions, study group collaboration, progress tracking and admin management, all designed to foster a supportive and engaging learning environment. We believe in power of teamwork and are committed to helping students reach their full potential through tailored learning experiences. 
+</p>
     </div>
   )
 }

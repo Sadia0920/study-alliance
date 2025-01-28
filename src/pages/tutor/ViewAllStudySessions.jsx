@@ -18,7 +18,7 @@ export default function ViewAllStudySessions() {
 
   <div className='w-10/12 mx-auto py-7'>
   <h1 className='text-3xl font-bold text-center mb-6'>All Study Session</h1>
-    <div className='w-10/12 mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 mb-7'>
+    <div className='w-10/12 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-4 mb-7'>
           {
             sessions.map((item) => <ViewAllStudySessionCard key={item._id} item={item}></ViewAllStudySessionCard>)
           }

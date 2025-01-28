@@ -45,12 +45,12 @@ const router = createBrowserRouter([
         {
           path: "/paymentPage/:id",
           element: <PrivateRoute><PaymentPage></PaymentPage></PrivateRoute>,
-          loader: ({params})=>fetch(`http://localhost:5000/session/${params.id}`)
+          loader: ({params})=>fetch(`https://study-alliance-server-virid.vercel.app/session/${params.id}`)
         },
         {
           path: "/sessionCardDetails/:id",
           element: <PrivateRoute><SessionCardDetails></SessionCardDetails></PrivateRoute>,
-          loader: ({params})=>fetch(`http://localhost:5000/session/${params.id}`)
+          loader: ({params})=>fetch(`https://study-alliance-server-virid.vercel.app/session/${params.id}`)
         },
       ]
     },
@@ -74,12 +74,12 @@ const router = createBrowserRouter([
         {
           path:'/dashboard/updateNotes/:id',
           element:<PrivateRoute><UpdateNote></UpdateNote></PrivateRoute>,
-          loader: ({params})=>fetch(`http://localhost:5000/notes/${params.id}`)
+          loader: ({params})=>fetch(`https://study-alliance-server-virid.vercel.app/notes/${params.id}`)
         },
         {
           path:'/dashboard/viewBookedSessionDetails/:id',
           element:<PrivateRoute><ViewBookedSessionDetails></ViewBookedSessionDetails></PrivateRoute>,
-          loader: ({params})=>fetch(`http://localhost:5000/bookedSession/${params.id}`)
+          loader: ({params})=>fetch(`https://study-alliance-server-virid.vercel.app/bookedSession/${params.id}`)
         },
         {
           path:'/dashboard/viewBookedSession',
@@ -109,12 +109,12 @@ const router = createBrowserRouter([
         {
           path:'/dashboard/uploadMaterials/:id',
           element:<PrivateRoute><UploadMaterials></UploadMaterials></PrivateRoute>,
-          loader: ({params})=>fetch(`http://localhost:5000/session/${params.id}`)
+          loader: ({params})=>fetch(`https://study-alliance-server-virid.vercel.app/session/${params.id}`)
         },
         {
           path:'/dashboard/updateMaterials/:id',
           element:<PrivateRoute><UpdateMaterials></UpdateMaterials></PrivateRoute>,
-          loader: ({params})=>fetch(`http://localhost:5000/materials/${params.id}`)
+          loader: ({params})=>fetch(`https://study-alliance-server-virid.vercel.app/materials/${params.id}`)
         },
         {
           path:'/dashboard/viewAllMaterials',
@@ -128,7 +128,7 @@ const router = createBrowserRouter([
         {
           path:'/dashboard/updateSession/:id',
           element:<AdminRoute><UpdateSession></UpdateSession></AdminRoute>,
-          loader: ({params})=>fetch(`http://localhost:5000/session/${params.id}`)
+          loader: ({params})=>fetch(`https://study-alliance-server-virid.vercel.app/session/${params.id}`)
         },
         {
           path:'/dashboard/adminViewAllStudySession',

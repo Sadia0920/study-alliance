@@ -4,12 +4,13 @@ import {loadStripe} from '@stripe/stripe-js';
 import {CardElement, Elements, useElements, useStripe} from '@stripe/react-stripe-js';
 import CheckoutForm from './CheckoutForm';
 
-const stripePromise = loadStripe('import.meta.env.Vite_Payment_Gateway_PK');
+const stripePromise = loadStripe(import.meta.env.VITE_PAYMENT_GATEWAY_PK);
+
 import { useLoaderData } from 'react-router-dom';
 
 export default function PaymentPage() {
   const loadedSessionDetails = useLoaderData()
-  console.log(loadedSessionDetails)
+  // console.log(loadedSessionDetails)
   return (
      <div className='w-10/12 mx-auto mt-36 py-7'>
         <Helmet>

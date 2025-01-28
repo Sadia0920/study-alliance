@@ -9,7 +9,7 @@ import { Helmet } from 'react-helmet-async';
 import useAxiosPublic from '../hooks/useAxiosPublic';
 
 export default function Register() {
-  const {createUser,setUser,updateUserInfo,signInWithGoogle} = useContext(AuthContext);
+  const {createUser,setUser,signInWithGithub,updateUserInfo,signInWithGoogle} = useContext(AuthContext);
   const navigate = useNavigate()
   const axiosPublic = useAxiosPublic()
   const [showPassword,setShowPassword]=useState(false)
@@ -47,14 +47,6 @@ export default function Register() {
     createUser(email,password)
     .then(result => {
       setUser(result.user)
-      // form.reset();
-      // navigate('/')
-      // Swal.fire({
-      //   title: 'Success',
-      //   text: 'Register Successfully',
-      //   icon: 'success',
-      //   confirmButtonText: 'Done'
-      // })
 
       // UpdateUser
     const profile = {
@@ -97,27 +89,6 @@ export default function Register() {
      })
   }
 
-  // const handleGoogleLogin = () => {
-  //     signInWithGoogle()
-  //     .then(result => {
-  //       setUser(result.user)
-  //       console.log(result.user)
-  //         Swal.fire({
-  //           title: 'Success',
-  //           text: 'Login With Google Successfully',
-  //           icon: 'success',
-  //           confirmButtonText: 'Done'
-  //         })
-  //         // navigate(from, {replace: true});
-  //         navigate('/');
-  //       })
-  
-  //     .catch(error => {
-  //       // console.log(error)
-  //       setUser(null)
-  //     })
-  //   }
-
   const handleGoogleLogin = () => {
       signInWithGoogle()
       .then(result => {
@@ -130,7 +101,7 @@ export default function Register() {
         }
         axiosPublic.post('/users', userInfo)
         .then(res => {
-          console.log(res.data)
+          // console.log(res.data)
           Swal.fire({
             title: 'Success',
             text: 'Login With Google Successfully',
@@ -147,25 +118,24 @@ export default function Register() {
       })
     }
 
-    // const handleGithubLogin = () => {
-    //    signInWithGithub()
-    //       .then(result => {
-    //         // console.log(result.user)
-    //         setUser(result.user)
-    //         console.log(result.user)
-    //         Swal.fire({
-    //           title: 'Success',
-    //           text: 'Login With Github Successfully',
-    //           icon: 'success',
-    //           confirmButtonText: 'Done'
-    //         })
-    //         navigate('/')
-    //       })
-    //       .catch(error => {
-    //         // console.log(error)
-    //         setUser(null)
-    //       })
-    // }
+    const handleGithubLogin = () => {
+       signInWithGithub()
+          .then(result => {
+            setUser(result.user)
+            // console.log(result.user)
+            Swal.fire({
+              title: 'Success',
+              text: 'Login With Github Successfully',
+              icon: 'success',
+              confirmButtonText: 'Done'
+            })
+            navigate('/')
+          })
+          .catch(error => {
+            // console.log(error)
+            setUser(null)
+          })
+    }
 
   return (
     <div className='py-10'>
@@ -182,20 +152,20 @@ export default function Register() {
       <form onSubmit={handleCreateUser} className="card-body">
         <div className="form-control">
           <label className="label">
-            <span className="label-text">Name</span>
+            <span className="label-text text-gray-500 font-semi-bold">Name</span>
           </label>
           <input type="text" placeholder="Your Name*" name='name' className="input input-bordered" required />
         </div>
         <div className="form-control">
           <label className="label">
-            <span className="label-text">PhotoURL</span>
+            <span className="label-text text-gray-500 font-semi-bold">PhotoURL</span>
           </label>
           <input type="text" placeholder="Your Photo URL*" name='photo' className="input input-bordered" required />
         </div>
 
         <div className="form-control"> 
         <label className="label">
-            <span className="label-text">Role</span>
+            <span className="label-text text-gray-500 font-semi-bold">Role</span>
           </label> 
         <select defaultValue="default" className="select select-bordered w-full" name='role' required type='text'>
         <option disabled value="default">select role</option>
@@ -207,26 +177,26 @@ export default function Register() {
 
         <div className="form-control">
           <label className="label">
-            <span className="label-text">Email</span>
+            <span className="label-text text-gray-500 font-semi-bold">Email</span>
           </label>
           <input type="email" placeholder="Your Email*" name='email' className="input input-bordered" required />
         </div>
         <div className="form-control relative">
           <label className="label">
-            <span className="label-text">Password</span>
+            <span className="label-text text-gray-500 font-semi-bold">Password</span>
           </label>
           <input type={showPassword?'text':'password'}  placeholder="Password*" name='password' className="input input-bordered" required />
-          <a onClick={()=>setShowPassword(!showPassword)} className="btn btn-xs text-lg absolute mt-12 ml-[280px] md:ml-[480px] lg:ml-[420px]">{showPassword?<FaEyeSlash></FaEyeSlash>:<FaEye></FaEye>}</a>
+          <a onClick={()=>setShowPassword(!showPassword)} className="btn btn-xs text-lg absolute mt-12 ml-[280px] md:ml-[620px] lg:ml-[410px]">{showPassword?<FaEyeSlash></FaEyeSlash>:<FaEye></FaEye>}</a>
           
         </div>
         <div className="form-control mt-6">
           <button className="btn text-white bg-[rgb(76,48,161)]">Register</button>
-          <p className='text-center mt-4'>Already have an account? <NavLink to='/login' className='text-[rgb(76,48,161)]'>Login</NavLink></p>
+          <p className='text-center mt-4'>Already have an account? <NavLink to='/login' className='text-[rgb(76,48,161)] border-white  border-b-2'>Login</NavLink></p>
         </div>
       </form>
       <div className="divider w-11/12 mx-auto">OR</div>
       <button onClick={handleGoogleLogin} className="btn bg-[rgb(76,48,161)] text-white w-11/12 mx-auto mt-6"><i className="fa-brands fa-google"></i>Google Login</button>
-      {/* <button onClick={handleGithubLogin} className="btn bg-[rgb(76,48,161)] text-white w-11/12 mx-auto mt-6"><i className="fa-brands fa-github"></i>Github Login</button> */}
+      <button onClick={handleGithubLogin} className="btn bg-[rgb(76,48,161)] text-white w-11/12 mx-auto mt-6"><i className="fa-brands fa-github"></i>Github Login</button>
     </div>
   </div>
 </div>

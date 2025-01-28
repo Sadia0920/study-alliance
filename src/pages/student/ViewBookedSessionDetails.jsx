@@ -56,24 +56,10 @@ refetch()
       ) : (
         <p className="text-lg mb-2 font-semibold text-gray-800">Registration Status: <strong className='text-red-600'>Closed</strong></p>
     )}
-   
-    {/* <p className="text-lg mb-2 font-semibold text-gray-800">Additional Info :<span className='text-gray-500'>{additionalInfo}</span></p> */}
-    <div className="card-actions">
-      {/* {
-        registrationFee == 0 ? (
-          <button onClick={handleBookedSession} disabled={isOngoing? false : true} className="btn bg-green-800 text-white">{bookNowStatus}</button>
-        )
-        :
-        (
-          <Link to='/paymentPage' ><button onClick={handleBookedSession} disabled={isOngoing? false : true}className="btn bg-green-800 text-white">{bookNowStatus}</button></Link>
-        )
-      }
-       */}
-   </div>
-
+    
 </div>
-        </div>
-        <CreateReview loadedViewSessionDetails={loadedViewSessionDetails}></CreateReview>
+    </div>
+    <CreateReview loadedViewSessionDetails={loadedViewSessionDetails}></CreateReview>
   </div>
   )
 }

@@ -11,6 +11,7 @@ export default function UpdateSession() {
   const axiosSecure = useAxiosSecure();
   const [, refetch] = useSession();
 
+  // Update Registration Fee
   const handleUpdateFee = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -23,11 +24,11 @@ export default function UpdateSession() {
     try{
         axiosSecure.put(`/session/${_id}`, newUpdatedFee)
         .then(res => {
-        console.log(res.data)
+        // console.log(res.data)
           if(res.data.modifiedCount > 0){
               Swal.fire({
                   title: 'Success',
-                  text: 'Fee Updated successfully',
+                  text: 'Registration Fee Updated successfully',
                   icon: 'success',
                   confirmButtonText: 'Ok'
                 })
@@ -39,7 +40,7 @@ export default function UpdateSession() {
     catch (err) {
         Swal.fire({
             title: 'Error',
-            text: 'Fee updated error',
+            text: 'Registration Fee updated error',
             icon: 'error',
             confirmButtonText: 'Ok'
           })
@@ -51,7 +52,7 @@ export default function UpdateSession() {
         <Helmet>
             <title>Study Alliance | Update Fee </title>
         </Helmet>
-        <div className=' bg-base-200 rounded-xl p-10'>
+        <div className=' bg-base-200 rounded-xl p-5 lg:p-10'>
             <h2 className='text-center text-4xl font-bold text-[#374151]'>Update Registration Fee</h2>
         <form onSubmit={handleUpdateFee}>
         <div className='mt-6'>

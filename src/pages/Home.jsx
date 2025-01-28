@@ -42,7 +42,7 @@ export default function Home(){
         <Cover img={banner} title='Learn Together, Grow Together' text='Join a global community of learners and achieve your goals faster with collaborative study tools, expert resources, and interactive group sessions. Start your journey today!'></Cover>
         
         <SectionTitle subHeading='Online Courses' heading='study session'></SectionTitle>
-        <div className='w-10/12 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-7'>
+        <div className='w-11/12 lg:w-10/12 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-7'>
       {
         limitedCards.map((item,idx) => <SessionCard key={idx} item={item}></SessionCard>)
       }
@@ -53,12 +53,12 @@ export default function Home(){
       </div>
       
       <SectionTitle subHeading='Tutor Details' heading='Tutor session'></SectionTitle>
-      <div className='w-10/12 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-7'>
+      <div className='w-11/12 lg:w-10/12 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-7'>
       {
         uniqueTutors.map((data,idx) => <TutorCard key={idx} data={data}></TutorCard>)
       }
       </div>
-    {/* <Session></Session> */}
+    
         </div>
     )
 }

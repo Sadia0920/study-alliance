@@ -43,15 +43,13 @@ export default function SessionCardDetails() {
       classEndDate,
       sessionDuration,
       registrationFee,
-      // reviews,
-      // bookNowStatus
     }
 
     // send data to the server
        try{
            axiosSecure.post('/bookedSession', bookedSession)
            .then(res => {
-           console.log(res.data)
+          //  console.log(res.data)
              if(res.data.insertedId){
                  Swal.fire({
                      title: 'Success',
@@ -104,12 +102,12 @@ export default function SessionCardDetails() {
     <div className="card-actions">
       {
         registrationFee == 0 ? (
-          <button onClick={handleBookedSession}  disabled={isButtonDisabled} className="btn bg-green-800 text-white">{isOngoing? 
+          <button onClick={handleBookedSession}  disabled={isButtonDisabled} className="btn bg-[rgb(76,48,161)] text-white">{isOngoing? 
           'Book Now' : 'Registration Closed'}</button>
         )
         :
         (
-          <Link to={`/paymentPage/${_id}`}  ><button disabled={isButtonDisabled} className="btn bg-green-800 text-white">{isOngoing? 'Book Now' : 'Registration Closed'}</button></Link>
+          <Link to={`/paymentPage/${_id}`}  ><button disabled={isButtonDisabled} className="btn bg-[rgb(76,48,161)] text-white">{isOngoing? 'Book Now' : 'Registration Closed'}</button></Link>
         )
       }
       

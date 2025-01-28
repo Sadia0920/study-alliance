@@ -41,7 +41,7 @@ export default function CreateStudySession() {
     try{
         axiosSecure.post('/session', newStudySession)
         .then(res => {
-        console.log(res.data)
+        // console.log(res.data)
           if(res.data.insertedId){
               Swal.fire({
                   title: 'Success',

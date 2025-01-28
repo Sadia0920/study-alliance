@@ -33,10 +33,10 @@ export default function Navbar() {
       <a data-tooltip-id="my-tooltip"
   data-tooltip-content={user.displayName}
   data-tooltip-place="top">
-      <img className='w-10 h-10 rounded-full' src={user.photoURL} alt="" />
+      <img className='w-7 h-7 md:w-10 md:h-10 rounded-full' src={user.photoURL} alt="" />
       </a>
       <div className="dropdown dropdown-hover">
-  <div tabIndex={0} role="button" className="btn ml-3 bg-[rgb(76,48,161)] text-white p-4 rounded-full">
+  <div tabIndex={0} role="button" className="btn ml-3 bg-[rgb(76,48,161)] text-white p-3 md:p-4 rounded-full">
   <i className="fa-solid fa-bars"></i>
   </div>
   <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-32 p-2 shadow">
