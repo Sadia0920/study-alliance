@@ -43,9 +43,9 @@ const router = createBrowserRouter([
           element: <AllSession></AllSession>,
         },
         {
-          path: "/paymentPage",
+          path: "/paymentPage/:id",
           element: <PrivateRoute><PaymentPage></PaymentPage></PrivateRoute>,
-          // loader: ({params})=>fetch(`http://localhost:5000/session/${params.id}`)
+          loader: ({params})=>fetch(`http://localhost:5000/session/${params.id}`)
         },
         {
           path: "/sessionCardDetails/:id",

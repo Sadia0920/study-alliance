@@ -8,24 +8,11 @@ export default function About() {
         <title>Study Alliance | About</title>
       </Helmet>
       <h1 className='text-center text-3xl font-bold'>About</h1>
-      <p className='text-lg mt-7 font-medium'>At VolunForce, we believe in the power of volunteering to transform communities and change lives. Our mission is to empower organizations with the tools they need to manage, engage, and grow their volunteer programs effortlessly.
+      <p className='text-lg mt-7 font-medium'>Welcome to Study Alliance, your all in one hub for academic success! We're here to bring students , tutors, and admin together in a seamless, collaaborative space designned to enhance learning experiences.
       <br></br>
-      With VolunForce, you can streamline every aspect of volunteer management—from scheduling shifts to tracking hours, communicating with teams, and reporting impact. Designed with simplicity and scalability in mind, our platform helps nonprofits, schools, businesses, and community groups focus on what truly matters: making a difference.
+      With Study Alliance, Weather yoy're a student seeking support , an admin managing resources, or a tutor providing guidance, we make it easy to connect , communicate, and thrive.
       <br></br>
-      Whether you're coordinating hundreds of volunteers for a large event or building a close-knit team for ongoing projects, VolunForce ensures you have everything you need to inspire action, build connections, and achieve your goals.
-<br></br>
-<span className='text-xl font-bold'>Our Vision:</span>
-<br></br>
-To create a world where volunteer programs thrive, communities flourish, and every act of service has maximum impact.
-<br></br>
-<span className='text-xl font-bold'>Our Values:</span>
-<br></br>
-Empowerment: Giving organizations and volunteers the tools to succeed.
-<br></br>
-Innovation: Continuously improving to meet the evolving needs of our users.
-<br></br>
-Community: Strengthening bonds through collaboration and service.
-</p>
+Our platform offers a verity of tools and features, including personalized tutoring sessions, study group collaboration, progress tracking and admin management, all designed to foster a supportive and engaging learning environment. We believe in power of teamwork and are committed to helping students reach their full potential through tailored learning experiences. 
     </div>
   )
 }

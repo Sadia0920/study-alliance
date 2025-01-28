@@ -12,7 +12,6 @@ export default function Cover({img,title,text}) {
         <p className="mb-5">
           {text}
         </p>
-        <button className="btn btn-primary">Get Started</button>
       </div>
     </div>
   </div>

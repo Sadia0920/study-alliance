@@ -40,6 +40,7 @@ export default function Home(){
             <title>Study Alliance | Home</title>
         </Helmet>
         <Cover img={banner} title='Learn Together, Grow Together' text='Join a global community of learners and achieve your goals faster with collaborative study tools, expert resources, and interactive group sessions. Start your journey today!'></Cover>
+        
         <SectionTitle subHeading='Online Courses' heading='study session'></SectionTitle>
         <div className='w-10/12 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-7'>
       {

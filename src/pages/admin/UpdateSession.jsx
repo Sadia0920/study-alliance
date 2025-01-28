@@ -49,7 +49,7 @@ export default function UpdateSession() {
   return (
     <div className='w-10/12 mx-auto py-7'>
         <Helmet>
-            <title>Study Alliance | Update Fee and Status</title>
+            <title>Study Alliance | Update Fee </title>
         </Helmet>
         <div className=' bg-base-200 rounded-xl p-10'>
             <h2 className='text-center text-4xl font-bold text-[#374151]'>Update Registration Fee</h2>

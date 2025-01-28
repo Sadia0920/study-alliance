@@ -131,8 +131,6 @@ export default function AdminViewAllStudySession() {
     <div className="w-5/12 md:w-3/12 lg:1/12 mx-auto mt-4">
     <Link to={`/dashboard/updateSession/${item._id}`}><button className='btn ml-3  text-[rgb(76,48,161)] bg-transparent border-[rgb(76,48,161)]'>Please Update the fee</button></Link>
     </div>
-   
-
           </>
           :
           <>
@@ -140,13 +138,11 @@ export default function AdminViewAllStudySession() {
         }
         </>
     }
-
    </div>
-    
   </div>
-            </div>)
-          }
-      </div>
+    </div>)
+    }
+  </div>
   </div>
   )
 }

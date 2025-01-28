@@ -109,7 +109,7 @@ export default function SessionCardDetails() {
         )
         :
         (
-          <Link to='/paymentPage' ><button disabled={isButtonDisabled} className="btn bg-green-800 text-white">{isOngoing? 'Book Now' : 'Registration Closed'}</button></Link>
+          <Link to={`/paymentPage/${_id}`}  ><button disabled={isButtonDisabled} className="btn bg-green-800 text-white">{isOngoing? 'Book Now' : 'Registration Closed'}</button></Link>
         )
       }
       
