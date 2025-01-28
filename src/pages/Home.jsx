@@ -1,18 +1,22 @@
 import { Helmet } from "react-helmet-async";
-import React, { useEffect, useState } from 'react'
 import Cover from "../shared/Cover";
 import banner from '../assets/banner.jpg'
 import SectionTitle from "../shared/SectionTitle";
 import SessionCard from "../components/SessionCard";
 import TutorCard from "../components/TutorCard";
+import useAxiosSecure from "../hooks/useAxiosSecure";
+import { useQuery } from "@tanstack/react-query";
+import { Link } from "react-router-dom";
 
 export default function Home(){
-    const[sessions,setSessions]=useState([]);
-        useEffect( ()=> {
-            fetch('http://localhost:5000/session')
-            .then(res => res.json())
-            .then(data => setSessions(data))
-        },[])
+  const axiosSecure = useAxiosSecure()
+  const { refetch, data: sessions=[] } = useQuery({
+      queryKey: ['sessions'],
+      queryFn: async()=>{
+          const res = await axiosSecure.get('/session')
+          return res.data;
+      }
+  })
     const limit = 6; 
   const limitedCards = sessions.slice(0, limit);
 
@@ -42,6 +46,11 @@ export default function Home(){
         limitedCards.map((item,idx) => <SessionCard key={idx} item={item}></SessionCard>)
       }
       </div>
+
+      <div className='text-center'>
+      <Link to='/allSession'><p className='text-xl btn border-0 bg-transparent border-b-2 border-[rgb(76,48,161)] text-[rgb(76,48,161)]'>All Session</p></Link>
+      </div>
+      
       <SectionTitle subHeading='Tutor Details' heading='Tutor session'></SectionTitle>
       <div className='w-10/12 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-7'>
       {

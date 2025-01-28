@@ -203,7 +203,7 @@ export default function CreateStudySession() {
                 <div className="label">
                 <span className="label-text font-bold">Status</span>
                 </div>
-                <input type="text" defaultValue={'pending'} placeholder="Enter Status*" name='status' className="input input-bordered w-full" required/>
+                <input type="text" readOnly defaultValue={'pending'} placeholder="Enter Status*" name='status' className="input input-bordered w-full" required/>
                 </label>
             </div>
         </div>

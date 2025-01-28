@@ -16,12 +16,11 @@ export default function SessionCardDetails() {
   const {user} = useContext(AuthContext)
   const axiosSecure = useAxiosSecure();
   const navigate = useNavigate();
-  const {_id,sessionTitle,tutorName,tutorEmail,averageRating,sessionDescription,registrationStartDate,registrationEndDate,classStartDate,classEndDate,sessionDuration,registrationFee,bookNowStatus,additionalInfo} = loadedSessionDetails
+  const {_id,sessionTitle,tutorName,tutorEmail,averageRating,sessionDescription,registrationStartDate,registrationEndDate,classStartDate,classEndDate,sessionDuration,registrationFee,bookNowStatus,} = loadedSessionDetails
 
   const [reviews,refetch] = useReview();
   const loadedReviews = reviews.filter((id) => id.studySessionID == _id)
-  refetch()
-  console.log(loadedReviews)
+  refetch();
 
  const currentDate = new Date();
  const endDate = new Date(registrationEndDate);
@@ -102,7 +101,6 @@ export default function SessionCardDetails() {
         <p className="text-lg mb-2 font-semibold text-gray-800">Registration Status: <strong className='text-red-600'>Closed</strong></p>
     )}
    
-    {/* <p className="text-lg mb-2 font-semibold text-gray-800">Additional Info :<span className='text-gray-500'>{additionalInfo}</span></p> */}
     <div className="card-actions">
       {
         registrationFee == 0 ? (
@@ -111,7 +109,7 @@ export default function SessionCardDetails() {
         )
         :
         (
-          <Link to='/paymentPage' ><button onClick={handleBookedSession} disabled={isButtonDisabled} className="btn bg-green-800 text-white">{isOngoing? 'Book Now' : 'Registration Closed'}</button></Link>
+          <Link to='/paymentPage' ><button disabled={isButtonDisabled} className="btn bg-green-800 text-white">{isOngoing? 'Book Now' : 'Registration Closed'}</button></Link>
         )
       }
       

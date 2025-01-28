@@ -69,6 +69,7 @@ const handleMakeStudent = (user) => {
       <th>Name</th>
       <th>Email</th>
       <th>Role</th>
+      <th>Action</th>
       </tr>
     </thead>
     <tbody> 
@@ -85,9 +86,23 @@ const handleMakeStudent = (user) => {
           <>
           {
             user.role === 'tutor' ? 
-            <button onClick={()=> handleMakeStudent(user)} className='btn mb-2'><i className="fa-solid fa-user"></i>{user.role}</button>
+           'Tutor'
+          :
+           'Student'
+          }
+          </>
+  
+        }
+      </td>
+      <td>
+        {
+          user.role === 'admin' ? 'Admin' : 
+          <>
+          {
+            user.role === 'tutor' ? 
+            <button onClick={()=> handleMakeStudent(user)} className='btn mb-2'>Update</button>
             :
-            <button onClick={()=> handleMakeTutor(user)} className='btn mb-2'><i className="fa-solid fa-users"></i>{user.role}</button>
+            <button onClick={()=> handleMakeTutor(user)} className='btn mb-2'>Update</button>
           }
           </>
   

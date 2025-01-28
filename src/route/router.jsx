@@ -2,7 +2,6 @@ import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../layouts/MainLayout";
 import Error from "../pages/Error";
 import Home from "../pages/Home";
-// import AllSession from './../pages/AllSession';
 import About from './../pages/About';
 import Login from './../pages/Login';
 import Register from './../pages/Register';
@@ -25,6 +24,9 @@ import PaymentPage from "../pages/PaymentPage";
 import ViewBookedSessionDetails from "../pages/student/ViewBookedSessionDetails";
 import UpdateMaterials from "../pages/tutor/UpdateMaterials";
 import AdminRoute from "./AdminRoute";
+import AllSession from "../pages/AllSession";
+import UpdateSession from './../pages/admin/UpdateSession';
+
 
 const router = createBrowserRouter([
     {
@@ -35,6 +37,10 @@ const router = createBrowserRouter([
         {
           path: "/",
           element: <Home></Home>,
+        },
+        {
+          path: "/allSession",
+          element: <AllSession></AllSession>,
         },
         {
           path: "/paymentPage",
@@ -118,6 +124,11 @@ const router = createBrowserRouter([
         {
           path:'/dashboard/viewAllUsers',
           element:<AdminRoute><ViewAllUsers></ViewAllUsers></AdminRoute>,
+        },
+        {
+          path:'/dashboard/updateSession/:id',
+          element:<AdminRoute><UpdateSession></UpdateSession></AdminRoute>,
+          loader: ({params})=>fetch(`http://localhost:5000/session/${params.id}`)
         },
         {
           path:'/dashboard/adminViewAllStudySession',
