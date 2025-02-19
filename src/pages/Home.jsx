@@ -11,6 +11,8 @@ import FAQ from "../components/FAQ";
 import PopularCourses from "../components/PopularCourses";
 import PremiumAccess from "../components/PremiumAccess";
 import ContactUs from "../components/ContactUs";
+import { TbEscalatorDown } from "react-icons/tb";
+import Testimonials from "../components/Testimonials";
 
 export default function Home(){
   const axiosSecure = useAxiosSecure()
@@ -64,6 +66,8 @@ export default function Home(){
         uniqueTutors.map((data,idx) => <TutorCard key={idx} data={data}></TutorCard>)
       }
       </div>
+      <SectionTitle subHeading='Testimonials' heading='Success Stories'></SectionTitle>
+      <Testimonials></Testimonials>
       <SectionTitle subHeading='premium Access' heading='Unlock Premium Learning'></SectionTitle>
       <PremiumAccess></PremiumAccess>
       <SectionTitle subHeading='contact' heading='Contact Us'></SectionTitle>
