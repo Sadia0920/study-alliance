@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 import FAQ from "../components/FAQ";
 import PopularCourses from "../components/PopularCourses";
 import PremiumAccess from "../components/PremiumAccess";
+import ContactUs from "../components/ContactUs";
 
 export default function Home(){
   const axiosSecure = useAxiosSecure()
@@ -65,6 +66,8 @@ export default function Home(){
       </div>
       <SectionTitle subHeading='premium Access' heading='Unlock Premium Learning'></SectionTitle>
       <PremiumAccess></PremiumAccess>
+      <SectionTitle subHeading='contact' heading='Contact Us'></SectionTitle>
+      <ContactUs></ContactUs>
       <SectionTitle subHeading='Questions Answers' heading='FAQ Session'></SectionTitle>
       <FAQ></FAQ>
     
