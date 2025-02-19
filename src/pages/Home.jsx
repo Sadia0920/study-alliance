@@ -7,6 +7,7 @@ import TutorCard from "../components/TutorCard";
 import useAxiosSecure from "../hooks/useAxiosSecure";
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
+import FAQ from "../components/FAQ";
 
 export default function Home(){
   const axiosSecure = useAxiosSecure()
@@ -52,12 +53,15 @@ export default function Home(){
       <Link to='/allSession'><p className='text-xl btn border-0 bg-transparent border-b-2 border-[rgb(76,48,161)] text-[rgb(76,48,161)]'>All Session</p></Link>
       </div>
       
-      <SectionTitle subHeading='Tutor Details' heading='Tutor session'></SectionTitle>
+      <SectionTitle subHeading='Tutor Details' heading='Tutor Session'></SectionTitle>
       <div className='w-11/12 lg:w-10/12 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-7'>
       {
         uniqueTutors.map((data,idx) => <TutorCard key={idx} data={data}></TutorCard>)
       }
       </div>
+      <SectionTitle subHeading='Questions Answers' heading='FAQ Session'></SectionTitle>
+      <FAQ></FAQ>
+     
     
         </div>
     )
