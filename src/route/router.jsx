@@ -3,6 +3,7 @@ import MainLayout from "../layouts/MainLayout";
 import Error from "../pages/Error";
 import Home from "../pages/Home";
 import About from './../pages/About';
+import AboutUs from './../pages/AboutUs';
 import Login from './../pages/Login';
 import Register from './../pages/Register';
 import Dashboard from './../layouts/Dashboard';
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
         {
           path: "/allSession",
           element: <AllSession></AllSession>,
+        },
+        {
+          path: "/aboutUs",
+          element: <AboutUs></AboutUs>,
         },
         {
           path: "/paymentPage/:id",

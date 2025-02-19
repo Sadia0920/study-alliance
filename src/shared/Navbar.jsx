@@ -43,7 +43,7 @@ export default function Navbar() {
         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
         <li className=' font-semibold text-[rgb(76,48,161)]'><NavLink to='/'>Home</NavLink></li>
         <li className=' font-semibold text-[rgb(76,48,161)]'><NavLink to='/allSession'>All Session</NavLink></li>
-        <li className=' font-semibold text-[rgb(76,48,161)]'><a>Item 3</a></li>
+        <li className=' font-semibold text-[rgb(76,48,161)]'><NavLink to='/aboutUs'>About Us</NavLink></li>
       </ul>
     </div>
 
@@ -55,7 +55,7 @@ export default function Navbar() {
     <ul className="menu menu-horizontal px-1">
       <li className=' font-semibold text-[rgb(76,48,161)]'><NavLink to='/'>Home</NavLink></li>
       <li className=' font-semibold text-[rgb(76,48,161)]'><NavLink to='/allSession'>All Session</NavLink></li>
-      <li className=' font-semibold text-[rgb(76,48,161)]'><a>Item 3</a></li>
+      <li className=' font-semibold text-[rgb(76,48,161)]'><NavLink to='/aboutUs'>About Us</NavLink></li>
     </ul>
   </div>
   <div className="md:navbar-end w-7/12 ml-9 lg:ml-14">
