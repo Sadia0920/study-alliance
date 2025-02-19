@@ -14,15 +14,15 @@ export default function ContactUs() {
         <button className="btn font-semibold text-lg md:mt-0 mt-4">Submit</button>
         </div>
         <p className="text-center mt-6">
-            <span className="text-lg font-bold">🔗 Follow us for updates & support:</span>
+            <span className="text-lg text-gray-800 font-bold">🔗 Follow us for updates & support:</span>
             <br></br>
-            📘 Facebook: <a href="https://www.facebook.com/sadia.afrin.khan.52" target="_blank" className="text-blue-600">https://www.facebook.com/sadia.afrin.khan.52</a>
+            📘 <span className="text-gray-800 font-bold">Facebook:</span> <a href="https://www.facebook.com/sadia.afrin.khan.52" target="_blank" className="text-blue-600">https://www.facebook.com/sadia.afrin.khan.52</a>
             <br></br>
-            🐦 Twitter: <a href="https://x.com/sadiaafrin0920" target="_blank" className="text-blue-600">https://x.com/sadiaafrin0920</a>
+            🐦 <span className="text-gray-800 font-bold">Twitter:</span> <a href="https://x.com/sadiaafrin0920" target="_blank" className="text-blue-600">https://x.com/sadiaafrin0920</a>
             <br></br>
-            📷 Instagram: <a href="https://www.instagram.com/afrin9050/" target="_blank" className="text-blue-600">https://www.instagram.com/afrin9050/</a>
+            📷 <span className="text-gray-800 font-bold">Instagram:</span> <a href="https://www.instagram.com/afrin9050/" target="_blank" className="text-blue-600">https://www.instagram.com/afrin9050/</a>
             <br></br>
-            🎥 YouTube: <a href="https://www.youtube.com/@SadiaAfrin-r9o" target="_blank" className="text-blue-600">https://www.youtube.com/@SadiaAfrin-r9o</a></p>
+            🎥 <span className="text-gray-800 font-bold">YouTube:</span> <a href="https://www.youtube.com/@SadiaAfrin-r9o" target="_blank" className="text-blue-600">https://www.youtube.com/@SadiaAfrin-r9o</a></p>
 
       </div>
     )
