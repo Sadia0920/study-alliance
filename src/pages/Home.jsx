@@ -9,6 +9,7 @@ import { useQuery } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
 import FAQ from "../components/FAQ";
 import PopularCourses from "../components/PopularCourses";
+import PremiumAccess from "../components/PremiumAccess";
 
 export default function Home(){
   const axiosSecure = useAxiosSecure()
@@ -62,6 +63,8 @@ export default function Home(){
         uniqueTutors.map((data,idx) => <TutorCard key={idx} data={data}></TutorCard>)
       }
       </div>
+      <SectionTitle subHeading='premium Access' heading='Unlock Premium Learning'></SectionTitle>
+      <PremiumAccess></PremiumAccess>
       <SectionTitle subHeading='Questions Answers' heading='FAQ Session'></SectionTitle>
       <FAQ></FAQ>
     
