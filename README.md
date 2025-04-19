@@ -6,7 +6,7 @@
 ### Live Site URL: https://study-alliance-83c26.web.app
 
 ### Features(10 points at least):
-- theere are three roles in our website - student , tutor , admin.
+- there are three roles in our website - student , tutor , admin.
 - student can create a note and also manage theri note.
 - student can also booked session but tutor and admin can't.
 - tutor can provide sessions by creating session.
