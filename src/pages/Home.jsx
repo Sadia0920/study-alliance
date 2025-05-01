@@ -55,7 +55,7 @@ export default function Home(){
       </div>
 
       <div className='text-center'>
-      <Link to='/allSession'><p className='text-xl btn border-0 bg-transparent border-b-2 border-[rgb(76,48,161)] text-[rgb(76,48,161)]'>All Session</p></Link>
+      <Link to='/allSession'><p className='text-xl btn border-0 bg-transparent border-b-2 border-[rgb(140,120,199)] text-[rgb(140,120,199)]'>All Session</p></Link>
       </div>
       <SectionTitle subHeading='Subjects' heading='Popular Courses'></SectionTitle>
       <PopularCourses></PopularCourses>
