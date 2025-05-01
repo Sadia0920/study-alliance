@@ -28,14 +28,14 @@ export default function PremiumAccess() {
     <p className='w-52 mx-auto md:w-80 '>It removes all advertisements from the website, providing users with a clean and uninterrupted browsing experience.</p>
     <div className="card-actions justify-end">
       
-      <button className="btn" onClick={()=>document.getElementById('my_modal_1').showModal()}>Subscribe Now - $50</button>
+      <button className="btn bg-[rgb(222,238,251)]" onClick={()=>document.getElementById('my_modal_1').showModal()}>Subscribe Now - $50</button>
 <dialog id="my_modal_1" className="modal">
-  <div className="modal-box">
+  <div className="modal-box bg-[rgb(212,208,229)]">
     <h3 className="font-bold text-lg text-gray-800">Ad-Free Experience</h3>
     <p className="py-4 text-gray-800">For buy this Premium Access you should pay $50</p>
     <div className="modal-action">
       <form method="dialog">
-        <button className="btn">OK</button>
+        <button className="btn bg-[rgb(76,48,161)] text-white">OK</button>
       </form>
     </div>
   </div>
@@ -55,15 +55,15 @@ export default function PremiumAccess() {
     <p className='w-52 mx-auto md:w-80'>It provides access to exclusive PDF notes, eBooks, worksheets, and practice tests for offline learning.</p>
     <div className="card-actions justify-end">
       
-<button className="btn" onClick={()=>document.getElementById('my_modal_2').showModal()}>Subscribe Now - $100</button>
+<button className="btn bg-[rgb(222,238,251)]" onClick={()=>document.getElementById('my_modal_2').showModal()}>Subscribe Now - $100</button>
 <dialog id="my_modal_2" className="modal">
-  <div className="modal-box">
+  <div className="modal-box bg-[rgb(212,208,229)]">
     <h3 className="font-bold text-lg text-gray-800">Downloadable Study Materials</h3>
     <p className="py-4 text-gray-800">For buy this Premium Access you should pay $100</p>
     <div className="modal-action">
       <form method="dialog">
         
-        <button className="btn">OK</button>
+        <button className="btn bg-[rgb(76,48,161)] text-white">OK</button>
       </form>
     </div>
   </div>
