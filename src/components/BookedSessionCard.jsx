@@ -11,9 +11,9 @@ const currentDate = new Date();
  const isOngoing = currentDate <= endDate;
   return (
     <div className="courseCard">
-    <h3 className="courseCard-title">{sessionTitle}</h3>
+    <h3 className="courseCard-title text-black">{sessionTitle}</h3>
     <p className="courseCard-description">{sessionDescription}</p>
-    <div className="courseCard-header">
+    <div className="courseCard-header text-black">
     {isOngoing ? (
         <p>Registration Status: <strong className='text-green-600'>Ongoing</strong></p>
       ) : (
