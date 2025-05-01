@@ -3,7 +3,8 @@ import { Helmet } from 'react-helmet-async';
 
 export default function AboutUs() {
   return (
-    <div className='p-16 mt-32 mb-7 bg-[rgb(76,48,161,0.3)] w-10/12 mx-auto rounded-xl'>
+   <div className='pt-36 pb-8'>
+     <div className='p-16 bg-[rgb(204,197,236)] w-10/12 mx-auto rounded-xl text-black'>
       <Helmet>
         <title>Study Alliance | About Us</title>
       </Helmet>
@@ -15,5 +16,6 @@ export default function AboutUs() {
 Our platform offers a verity of tools and features, including personalized tutoring sessions, study group collaboration, progress tracking and admin management, all designed to foster a supportive and engaging learning environment. We believe in power of teamwork and are committed to helping students reach their full potential through tailored learning experiences. 
 </p>
     </div>
+   </div>
   )
 }

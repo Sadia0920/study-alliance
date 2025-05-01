@@ -16,7 +16,7 @@ export default function AllSession() {
       }
   })
   return (
-    <div className='mt-32'>
+    <div className='pt-28'>
     <Helmet>
       <title>Study Alliance | All Session</title>
     </Helmet>
