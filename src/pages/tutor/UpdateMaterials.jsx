@@ -80,7 +80,7 @@ export default function  UpdateMaterials() {
         <div className="label">
         <span className="label-text font-bold">Title</span>
         </div>
-        <input {...register("title")} type="text" defaultValue={title} placeholder="Enter Title*" name='title' className="input input-bordered w-full" required />
+        <input {...register("title")} type="text" defaultValue={title} placeholder="Enter Title*" name='title' className="input input-bordered w-full text-black" required />
         </label>
         </div>
       </div>
@@ -90,7 +90,7 @@ export default function  UpdateMaterials() {
         <div className="label">
         <span className="label-text font-bold">Study Session ID</span>
         </div>
-        <input {...register("studySessionID")} type="text" readOnly defaultValue={studySessionID} placeholder="Enter Study Session ID" name='studySessionID' className="input input-bordered w-full" required/>
+        <input {...register("studySessionID")} type="text" readOnly defaultValue={studySessionID} placeholder="Enter Study Session ID" name='studySessionID' className="input input-bordered text-black w-full" required/>
         </label>
       </div>
       <div className='md:w-1/2'>
@@ -98,7 +98,7 @@ export default function  UpdateMaterials() {
         <div className="label">
         <span className="label-text font-bold">Tutor Email</span>
         </div>
-        <input {...register("tutorEmail")} type="email" readOnly defaultValue={user.email} placeholder="Enter Tutor Email" name='tutorEmail' className="input input-bordered w-full" required/>
+        <input {...register("tutorEmail")} type="email" readOnly defaultValue={user.email} placeholder="Enter Tutor Email" name='tutorEmail' className="input input-bordered w-full text-black" required/>
         </label>
       </div>
      </div>
@@ -108,7 +108,7 @@ export default function  UpdateMaterials() {
         <div className="label">
         <span className="label-text font-bold">Image upload</span>
         </div>
-        <input {...register("image")} type="file" className="file-input file-input-bordered  w-full" name='image'/>
+        <input {...register("image")} type="file" className="file-input file-input-bordered text-black w-full" name='image'/>
         </label>
         </div>
      </div>
@@ -118,12 +118,12 @@ export default function  UpdateMaterials() {
         <div className="label">
         <span className="label-text font-bold">Google Drive Link</span>
         </div>
-        <input {...register("link")} defaultValue={link} type="text" placeholder="Enter Google Drive Link*" name='link' className="input input-bordered w-full" required/>
+        <input {...register("link")} defaultValue={link} type="text" placeholder="Enter Google Drive Link*" name='link' className="input input-bordered w-full text-black" required/>
         </label>
         </div>
      </div>
      <div className='mt-6'>
-        <input type="submit" value="Update Materials" className="btn w-full font-bold border-white bg-[rgb(76,48,161)] text-white" />
+        <input type="submit" value="Update Materials" className="btn w-full font-bold border-white bg-[rgb(76,48,161)] text-white hover:text-black hover:bg-[rgb(212,208,229)]" />
     </div>
     </form>
     </div>

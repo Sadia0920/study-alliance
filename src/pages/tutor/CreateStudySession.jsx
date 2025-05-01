@@ -89,7 +89,7 @@ export default function CreateStudySession() {
                 <div className="label">
                 <span className="label-text font-bold">Tutor Name</span>
                 </div>
-                <input type="text" readOnly defaultValue={user.displayName}  placeholder="Enter Tutor Name" name='tutorName' className="input input-bordered w-full" required/>
+                <input type="text" readOnly defaultValue={user.displayName}  placeholder="Enter Tutor Name" name='tutorName' className="input input-bordered w-full text-black" required/>
                 </label>
             </div>
             <div className='md:w-1/2'>
@@ -97,7 +97,7 @@ export default function CreateStudySession() {
                 <div className="label">
                 <span className="label-text font-bold">Tutor Email</span>
                 </div>
-                <input type="email" readOnly defaultValue={user.email} placeholder="Enter Tutor Email" name='tutorEmail' className="input input-bordered w-full" required/>
+                <input type="email" readOnly defaultValue={user.email} placeholder="Enter Tutor Email" name='tutorEmail' className="input input-bordered w-full text-black" required/>
                 </label>
             </div>
         </div>
@@ -107,7 +107,7 @@ export default function CreateStudySession() {
                 <div className="label">
                 <span className="label-text font-bold">Session Description</span>
                 </div>
-                <textarea type="text" placeholder="Enter Session Description*" name='sessionDescription' className="textarea" required></textarea>
+                <textarea type="text" placeholder="Enter Session Description*" name='sessionDescription' className="textarea text-black" required></textarea>
                 </label>
             </div>
         </div>
@@ -185,7 +185,7 @@ export default function CreateStudySession() {
                 <div className="label">
                 <span className="label-text font-bold">Session Duration</span>
                 </div>
-                <input type="text" placeholder="Enter Session Duration*" name='sessionDuration' className="input input-bordered w-full" required />
+                <input type="text" placeholder="Enter Session Duration*" name='sessionDuration' className="input input-bordered w-full text-black" required />
                 </label>
             </div>
         </div>
@@ -195,7 +195,7 @@ export default function CreateStudySession() {
                 <div className="label">
                 <span className="label-text font-bold">Registration Fee</span>
                 </div>
-                <input type="number" readOnly defaultValue={0}  placeholder="Enter Registration Fee*" name='registrationFee' className="input input-bordered w-full" required/>
+                <input type="number" readOnly defaultValue={0}  placeholder="Enter Registration Fee*" name='registrationFee' className="input input-bordered w-full text-black" required/>
                 </label>
             </div>
             <div className='md:w-1/2'>
@@ -203,12 +203,12 @@ export default function CreateStudySession() {
                 <div className="label">
                 <span className="label-text font-bold">Status</span>
                 </div>
-                <input type="text" readOnly defaultValue={'pending'} placeholder="Enter Status*" name='status' className="input input-bordered w-full" required/>
+                <input type="text" readOnly defaultValue={'pending'} placeholder="Enter Status*" name='status' className="input input-bordered w-full text-black" required/>
                 </label>
             </div>
         </div>
         <div className='mt-6'>
-        <input type="submit" value="Create Study Session" className="btn w-full font-bold border-white bg-[rgb(76,48,161)] text-white" />
+        <input type="submit" value="Create Study Session" className="btn w-full font-bold border-white bg-[rgb(76,48,161)] text-white hover:text-black hover:bg-[rgb(212,208,229)]" />
         </div>
         </form>
         </div>

@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet-async';
 import Swal from 'sweetalert2';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
 import useUploadMaterials from '../../hooks/useUploadMaterials';
+import SectionTitle2 from '../../shared/SectionTitle2';
 
 export default function ViewAllMaterials() {
 
@@ -47,12 +48,12 @@ export default function ViewAllMaterials() {
   {/* My Materials */}
 
   <div className='w-10/12 mx-auto py-7'>
-  <h1 className='text-3xl font-bold text-center mb-6'>My Materials</h1>
+   <SectionTitle2 subHeading='Materials Details' heading='My Materials'></SectionTitle2>
     <div className="overflow-x-auto">
     <table className="table">
     {/* head */}
     <thead>
-      <tr className='text-gray-400'>
+      <tr className='text-gray-500'>
       <th>#</th>
       <th>Image</th>
       <th>Title</th>
@@ -71,9 +72,9 @@ export default function ViewAllMaterials() {
       <td>
 
       {/* update button */}
-      <Link to={`/dashboard/updateMaterials/${item._id}`}><button className='btn mb-2'><i className="fa-regular fa-pen-to-square"></i></button></Link>
+      <Link to={`/dashboard/updateMaterials/${item._id}`}><button className='btn mb-2'><i className="fa-regular fa-pen-to-square text-[rgb(76,48,161)]"></i></button></Link>
       {/* delete button */}
-      <button onClick={()=>handleDeleteMaterials(item._id)} className='btn'><i className="fa-regular fa-trash-can"></i></button> 
+      <button onClick={()=>handleDeleteMaterials(item._id)} className='btn'><i className="fa-regular fa-trash-can text-red-700"></i></button> 
       </td>
       </tr>)
     }

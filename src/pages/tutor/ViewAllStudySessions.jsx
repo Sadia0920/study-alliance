@@ -3,6 +3,7 @@ import React from 'react'
 import { Helmet } from 'react-helmet-async';
 import useSession from '../../hooks/useSession';
 import ViewAllStudySessionCard from './ViewAllStudySessionCard';
+import SectionTitle2 from '../../shared/SectionTitle2';
 
 export default function ViewAllStudySessions() {
   const [sessions,refetch] = useSession();
@@ -17,7 +18,7 @@ export default function ViewAllStudySessions() {
   {/* My All Session */}
 
   <div className='w-10/12 mx-auto py-7'>
-  <h1 className='text-3xl font-bold text-center mb-6'>All Study Session</h1>
+   <SectionTitle2 subHeading='Session Details' heading='All Study Session'></SectionTitle2>
     <div className='w-10/12 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-4 mb-7'>
           {
             sessions.map((item) => <ViewAllStudySessionCard key={item._id} item={item}></ViewAllStudySessionCard>)
