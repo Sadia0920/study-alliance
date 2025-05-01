@@ -3,7 +3,7 @@ export default function PopularCourses() {
     <div className="w-10/12 mx-auto my-14">
     <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
     {/* 1 */}
-    <div className="card bg-[rgb(76,48,161,0.2)] shadow-xl text-center">
+    <div className="card bg-[rgb(212,208,229)] text-black shadow-xl text-center">
       <div className="card-body">
       <i class="fa-solid fa-shield-halved text-3xl"></i>
       <h2 className="text-xl font-bold">Basics of Math</h2>
@@ -11,7 +11,7 @@ export default function PopularCourses() {
       </div>
     </div>
     {/* 2 */}
-    <div className="card bg-[rgb(76,48,161,0.2)] shadow-xl text-center">
+    <div className="card bg-[rgb(212,208,229)] text-black shadow-xl text-center">
       <div className="card-body">
       <i class="fa-solid fa-shield-halved text-3xl"></i>
       <h2 className="text-xl font-bold">Introduction to AI</h2>
@@ -19,7 +19,7 @@ export default function PopularCourses() {
       </div>
     </div>
     {/* 3 */}
-    <div className="card bg-[rgb(76,48,161,0.2)] shadow-xl text-center">
+    <div className="card bg-[rgb(212,208,229)] text-black shadow-xl text-center">
       <div className="card-body">
       <i class="fa-solid fa-shield-halved text-3xl"></i>
       <h2 className="text-xl font-bold">Basics of Graphic Design</h2>
@@ -27,7 +27,7 @@ export default function PopularCourses() {
       </div>
     </div>
     {/* 4 */}
-    <div className="card bg-[rgb(76,48,161,0.2)] shadow-xl text-center">
+    <div className="card bg-[rgb(212,208,229)] text-black shadow-xl text-center">
       <div className="card-body">
       <i className="fa-solid fa-shield-halved text-3xl"></i>
       <h2 className="text-xl font-bold"> Essay Grammar Techniques</h2>
