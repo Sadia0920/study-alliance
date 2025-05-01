@@ -62,7 +62,7 @@ export default function UpdateNote() {
                 <div className="label">
                 <span className="label-text font-bold">Email</span>
                 </div>
-                <input type="email" readOnly defaultValue={email} placeholder="Enter Email" name='email' className="input input-bordered w-full" required />
+                <input type="email" readOnly defaultValue={email} placeholder="Enter Email" name='email' className="input input-bordered w-full text-black" required />
                 </label>
             </div>
         </div>
@@ -72,7 +72,7 @@ export default function UpdateNote() {
                 <div className="label">
                 <span className="label-text font-bold">Title</span>
                 </div>
-                <input type="text" defaultValue={title} placeholder="Enter Title*" name='title' className="input input-bordered w-full" required />
+                <input type="text" defaultValue={title} placeholder="Enter Title*" name='title' className="input input-bordered w-full text-black" required />
                 </label>
             </div>
         </div>
@@ -82,7 +82,7 @@ export default function UpdateNote() {
                 <div className="label">
                 <span className="label-text font-bold">Description</span>
                 </div>
-                <textarea type="text" defaultValue={description} placeholder="Enter Description*" name='description' className="textarea" required></textarea>
+                <textarea type="text" defaultValue={description} placeholder="Enter Description*" name='description' className="textarea text-black" required></textarea>
                 </label>
             </div>
         </div>

@@ -1,6 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
 import useUploadMaterials from '../../hooks/useUploadMaterials';
+import SectionTitle2 from '../../shared/SectionTitle2';
 
 export default function ViewAllStudyMaterials() {
 
@@ -16,7 +17,7 @@ export default function ViewAllStudyMaterials() {
   {/* My Materials */}
 
   <div className='w-10/12 mx-auto py-7'>
-  <h1 className='text-3xl font-bold text-center mb-6'>My Materials</h1>
+   <SectionTitle2 subHeading='List Of Materials' heading='My Materials'></SectionTitle2>
     <div className="overflow-x-auto">
     <table className="table">
     {/* head */}

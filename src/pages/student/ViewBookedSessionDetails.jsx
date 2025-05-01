@@ -38,18 +38,18 @@ refetch()
        <div className="card bg-base-200 shadow-xl">
    <div className="card-body items-center text-center">
      <h2 className="card-title text-xl font-bold text-gray-950">{sessionTitle}</h2>
-     <p className="text-lg font-semibold text-gray-800">Tutor Name :<span className='text-gray-500'>{tutorName}</span></p>
+     <p className="text-lg font-semibold text-gray-800">Tutor Name :<span className='text-gray-600'>{tutorName}</span></p>
      {/* <p className="text-lg font-semibold text-gray-800">Average Rating :<span className='text-gray-500'>{averageRating}</span></p> */}
-    <p className="text-lg mb-2 font-semibold text-gray-800">Session Description :<span className='text-gray-500'>{sessionDescription}</span></p>
-    <p className="text-lg font-semibold text-gray-800">Registration Start Date :<span className='text-gray-500'>{registrationStartDate}</span></p>
-    <p className="text-lg font-semibold text-gray-800">Registration End Date :<span className='text-gray-500'>{registrationEndDate}</span></p>
-    <p className="text-lg mb-2 font-semibold text-gray-800">Class Start Date :<span className='text-gray-500'>{classStartDate}</span></p>
-    <p className="text-lg mb-2 font-semibold text-gray-800">Class End Date :<span className='text-gray-500'>{classEndDate}</span></p>
-    <p className="text-lg mb-2 font-semibold text-gray-800">Session Duration :<span className='text-gray-500'>{sessionDuration}</span></p>
-    <p className="text-lg mb-2 font-semibold text-gray-800">Registration Fee :<span className='text-gray-500'>{registrationFee}</span></p>
+    <p className="text-lg mb-2 font-semibold text-gray-800">Session Description :<span className='text-gray-600'>{sessionDescription}</span></p>
+    <p className="text-lg font-semibold text-gray-800">Registration Start Date :<span className='text-gray-600'>{registrationStartDate}</span></p>
+    <p className="text-lg font-semibold text-gray-800">Registration End Date :<span className='text-gray-600'>{registrationEndDate}</span></p>
+    <p className="text-lg mb-2 font-semibold text-gray-800">Class Start Date :<span className='text-gray-600'>{classStartDate}</span></p>
+    <p className="text-lg mb-2 font-semibold text-gray-800">Class End Date :<span className='text-gray-600'>{classEndDate}</span></p>
+    <p className="text-lg mb-2 font-semibold text-gray-800">Session Duration :<span className='text-gray-600'>{sessionDuration}</span></p>
+    <p className="text-lg mb-2 font-semibold text-gray-800">Registration Fee :<span className='text-gray-600'>{registrationFee}</span></p>
     <p className="text-lg mb-2 font-semibold text-gray-800">Reviews :</p>
     {
-      loadedReviews.map((review,idx) => <li key={idx} className='text-gray-500'>{review.review}</li>)
+      loadedReviews.map((review,idx) => <li key={idx} className='text-gray-600'>{review.review}</li>)
     }
     {isOngoing ? (
         <p className="text-lg mb-2 font-semibold text-gray-800">Registration Status: <strong className='text-green-600'>Ongoing</strong></p>

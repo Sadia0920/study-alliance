@@ -62,7 +62,7 @@ export default function CreateReview({loadedViewSessionDetails}) {
                 <div className="label">
                 <span className="label-text font-bold">Review</span>
                 </div>
-                <textarea type="text" placeholder="Enter Review*" name='review' className="textarea" required></textarea>
+                <textarea type="text" placeholder="Enter Review*" name='review' className="textarea text-black" required></textarea>
                 </label>
             </div>
         </div>
@@ -72,12 +72,12 @@ export default function CreateReview({loadedViewSessionDetails}) {
                 <div className="label">
                 <span className="label-text font-bold">Rating</span>
                 </div>
-                <input type="number" placeholder="Enter Rating*" name='rate' className="input input-bordered w-full" />
+                <input type="number" placeholder="Enter Rating*" name='rate' className="input input-bordered w-full text-black" />
                 </label>
             </div>
         </div>
         <div className='mt-6'>
-            <input type="submit" value="Create review" className="btn w-full font-bold border-white bg-[rgb(76,48,161)] text-white" />
+            <input type="submit" value="Create review" className="btn w-full font-bold border-white bg-[rgb(76,48,161)] text-white hover:text-black hover:bg-[rgb(212,208,229)]" />
         </div>
         </form>
         </div>
