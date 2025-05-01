@@ -1,14 +1,14 @@
 export default function ContactUs() {
     return (
-      <div className="w-10/12 mx-auto bg-blue-100 rounded-3xl py-10 px-5">
-        <p className='text-center my-9 text-lg font-semibold text-gray-500'>Please reach out us for inquiries, support requests, or partnership opportunities</p>
+      <div className="w-10/12 mx-auto bg-[rgb(222,238,251)] rounded-3xl py-10 px-5">
+        <p className='text-center my-9 text-lg font-semibold text-gray-600'>Please reach out us for inquiries, support requests, or partnership opportunities</p>
 
         <div className="md:flex flex-cols items-center md:w-full lg:w-7/12 mx-auto gap-2">
         <label className="input input-bordered flex items-center gap-2">
         <input type="text" className="grow" placeholder="Name" />
         </label>
         <label className="input input-bordered flex items-center gap-2 md:mt-0 mt-4">
-        <i class="fa-solid fa-envelope"></i>
+        <i class="fa-solid fa-envelope text-gray-600"></i>
         <input type="text" className="grow" placeholder="Email" />
         </label>
         <button className="btn font-semibold text-lg md:mt-0 mt-4">Submit</button>
