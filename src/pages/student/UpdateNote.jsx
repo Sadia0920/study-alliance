@@ -87,7 +87,7 @@ export default function UpdateNote() {
             </div>
         </div>
         <div className='mt-6'>
-            <input type="submit" value="Update Note" className="btn w-full font-bold border-white bg-[rgb(76,48,161)] text-white" />
+            <input type="submit" value="Update Note" className="btn w-full font-bold border-white bg-[rgb(76,48,161)] text-white hover:text-black hover:bg-[rgb(212,208,229)]" />
         </div>
         </form>
         </div>

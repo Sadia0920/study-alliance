@@ -4,6 +4,7 @@ import { useQuery } from '@tanstack/react-query';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
 import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
+import SectionTitle2 from '../../shared/SectionTitle2';
 
 export default function AdminViewAllStudySession() {
  
@@ -92,8 +93,7 @@ export default function AdminViewAllStudySession() {
     </Helmet>
     
   {/* All Session */}
-
-  <h1 className='text-3xl font-bold text-center mb-6'>All Study Session</h1>
+  <SectionTitle2 subHeading='Session Details' heading='All Study Session'></SectionTitle2>
   <div className='w-full mx-auto mb-7'>
   {
     session.map((item) => 

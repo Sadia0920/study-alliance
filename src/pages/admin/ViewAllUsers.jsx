@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet-async';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
 import { useQuery } from '@tanstack/react-query';
 import Swal from 'sweetalert2';
+import SectionTitle2 from '../../shared/SectionTitle2';
 
 export default function ViewAllUsers() {
 
@@ -57,12 +58,12 @@ const handleMakeStudent = (user) => {
   {/* Users */}
 
   <div className='w-10/12 mx-auto py-7'>
-  <h1 className='text-3xl font-bold text-center mb-6'>All Users</h1>
+  <SectionTitle2 subHeading='Who Use Our Website' heading='All Users'></SectionTitle2>
     <div className="overflow-x-auto">
     <table className="table">
     {/* head */}
     <thead>
-      <tr className='text-gray-400'>
+      <tr className='text-gray-500'>
       <th>#</th>
       <th>Name</th>
       <th>Email</th>
@@ -96,9 +97,9 @@ const handleMakeStudent = (user) => {
           <>
           {
             user.role === 'tutor' ? 
-            <button onClick={()=> handleMakeStudent(user)} className='btn mb-2'>Update</button>
+            <button onClick={()=> handleMakeStudent(user)} className='btn mb-2 text-[rgb(76,48,161)]'>Update</button>
             :
-            <button onClick={()=> handleMakeTutor(user)} className='btn mb-2'>Update</button>
+            <button onClick={()=> handleMakeTutor(user)} className='btn mb-2 text-[rgb(76,48,161)]'>Update</button>
           }
           </>
         }

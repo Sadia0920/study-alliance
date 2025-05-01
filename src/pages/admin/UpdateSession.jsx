@@ -61,12 +61,12 @@ export default function UpdateSession() {
                 <div className="label">
                 <span className="label-text font-bold">Registration Fee</span>
                 </div>
-                <input type="text" defaultValue={registrationFee} placeholder="Enter The Amount*" name='registrationFee' className="input input-bordered w-full" required />
+                <input type="text" defaultValue={registrationFee} placeholder="Enter The Amount*" name='registrationFee' className="input input-bordered w-full text-black" required />
                 </label>
             </div>
         </div>
         <div className='mt-6'>
-            <input type="submit" value="Update Registration Fee" className="btn w-full font-bold border-white bg-[rgb(76,48,161)] text-white" />
+            <input type="submit" value="Update Registration Fee" className="btn w-full font-bold border-white bg-[rgb(76,48,161)] text-white hover:text-black hover:bg-[rgb(212,208,229)]" />
         </div>
         </form>
         </div>

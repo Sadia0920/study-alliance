@@ -56,7 +56,7 @@ export default function ManagePersonalNotes() {
     <table className="table">
     {/* head */}
     <thead>
-      <tr className='text-gray-400'>
+      <tr className='text-gray-500'>
       <th>#</th>
       <th>Email</th>
       <th>Title</th>

@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import Swal from 'sweetalert2';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
 import { useQuery } from '@tanstack/react-query';
+import SectionTitle2 from '../../shared/SectionTitle2';
 
 export default function AdminViewAllMaterials() {
 
@@ -53,12 +54,12 @@ export default function AdminViewAllMaterials() {
   {/* All Materials */}
 
   <div className='w-10/12 mx-auto py-7'>
-  <h1 className='text-3xl font-bold text-center mb-6'>All Materials</h1>
+   <SectionTitle2 subHeading='Materials Details' heading='All Materials'></SectionTitle2>
     <div className="overflow-x-auto">
     <table className="table">
     {/* head */}
     <thead>
-      <tr className='text-gray-400'>
+      <tr className='text-gray-500'>
       <th>#</th>
       <th>Image</th>
       <th>Title</th>
@@ -77,7 +78,7 @@ export default function AdminViewAllMaterials() {
       <td>
 
       {/* delete button */}
-      <button onClick={()=>handleDeleteMaterials(item._id)} className='btn'><i className="fa-regular fa-trash-can"></i></button> 
+      <button onClick={()=>handleDeleteMaterials(item._id)} className='btn'><i className="fa-regular fa-trash-can text-red-700"></i></button> 
       </td>
       </tr>)
     }

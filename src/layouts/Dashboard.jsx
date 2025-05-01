@@ -14,7 +14,7 @@ export default function Dashboard() {
         <title>Study Alliance | Dashboard</title>
       </Helmet>
     <div className='md:flex'>
-    <div className='lg:w-64 w-42 md:min-h-screen bg-slate-300'>
+    <div className='lg:w-64 w-42 md:min-h-screen text-black bg-slate-300'>
       <ul className='menu'>
       {/* <li><NavLink to='/dashboard'><i className="fa-solid fa-circle-info"></i>About</NavLink></li> */}
       <li><NavLink to='/dashboard'><i className="fa-solid fa-circle-info"></i>My Profile</NavLink></li>

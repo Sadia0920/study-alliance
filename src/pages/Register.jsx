@@ -154,20 +154,20 @@ export default function Register() {
           <label className="label">
             <span className="label-text text-gray-500 font-semi-bold">Name</span>
           </label>
-          <input type="text" placeholder="Your Name*" name='name' className="input input-bordered" required />
+          <input type="text" placeholder="Your Name*" name='name' className="input input-bordered text-black" required />
         </div>
         <div className="form-control">
           <label className="label">
             <span className="label-text text-gray-500 font-semi-bold">PhotoURL</span>
           </label>
-          <input type="text" placeholder="Your Photo URL*" name='photo' className="input input-bordered" required />
+          <input type="text" placeholder="Your Photo URL*" name='photo' className="input input-bordered text-black" required />
         </div>
 
         <div className="form-control"> 
         <label className="label">
             <span className="label-text text-gray-500 font-semi-bold">Role</span>
           </label> 
-        <select defaultValue="default" className="select select-bordered w-full" name='role' required type='text'>
+        <select defaultValue="default" className="select select-bordered w-full text-gray-600" name='role' required type='text'>
         <option disabled value="default">select role</option>
         <option value="student">Student</option>
         <option value="tutor">Tutor</option>
@@ -179,24 +179,24 @@ export default function Register() {
           <label className="label">
             <span className="label-text text-gray-500 font-semi-bold">Email</span>
           </label>
-          <input type="email" placeholder="Your Email*" name='email' className="input input-bordered" required />
+          <input type="email" placeholder="Your Email*" name='email' className="input input-bordered text-black" required />
         </div>
         <div className="form-control relative">
           <label className="label">
             <span className="label-text text-gray-500 font-semi-bold">Password</span>
           </label>
-          <input type={showPassword?'text':'password'}  placeholder="Password*" name='password' className="input input-bordered" required />
+          <input type={showPassword?'text':'password'}  placeholder="Password*" name='password' className="input input-bordered text-black" required />
           <a onClick={()=>setShowPassword(!showPassword)} className="btn btn-xs text-lg absolute mt-12 ml-[280px] md:ml-[620px] lg:ml-[410px]">{showPassword?<FaEyeSlash></FaEyeSlash>:<FaEye></FaEye>}</a>
           
         </div>
         <div className="form-control mt-6">
-          <button className="btn text-white bg-[rgb(76,48,161)]">Register</button>
-          <p className='text-center mt-4'>Already have an account? <NavLink to='/login' className='text-[rgb(76,48,161)] border-white  border-b-2'>Login</NavLink></p>
+          <button className="btn text-white bg-[rgb(76,48,161)] hover:text-black hover:bg-[rgb(212,208,229)]">Register</button>
+          <p className='text-center mt-4'>Already have an account? <NavLink to='/login' className='text-[rgb(149,119,237)] border-[rgb(149,119,237)] border-b-2'>Login</NavLink></p>
         </div>
       </form>
       <div className="divider w-11/12 mx-auto">OR</div>
-      <button onClick={handleGoogleLogin} className="btn bg-[rgb(76,48,161)] text-white w-11/12 mx-auto mt-6"><i className="fa-brands fa-google"></i>Google Login</button>
-      <button onClick={handleGithubLogin} className="btn bg-[rgb(76,48,161)] text-white w-11/12 mx-auto mt-6"><i className="fa-brands fa-github"></i>Github Login</button>
+      <button onClick={handleGoogleLogin} className="btn bg-[rgb(76,48,161)] text-white hover:text-black hover:bg-[rgb(212,208,229)] w-11/12 mx-auto mt-6"><i className="fa-brands fa-google"></i>Google Login</button>
+      <button onClick={handleGithubLogin} className="btn bg-[rgb(76,48,161)] text-white hover:text-black hover:bg-[rgb(212,208,229)] w-11/12 mx-auto mt-6"><i className="fa-brands fa-github"></i>Github Login</button>
     </div>
   </div>
 </div>

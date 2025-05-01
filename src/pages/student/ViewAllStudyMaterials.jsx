@@ -22,7 +22,7 @@ export default function ViewAllStudyMaterials() {
     <table className="table">
     {/* head */}
     <thead>
-      <tr className='text-gray-400'>
+      <tr className='text-gray-500'>
       <th>#</th>
       <th>Image</th>
       <th>Title</th>

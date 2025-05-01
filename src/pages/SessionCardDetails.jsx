@@ -103,12 +103,12 @@ export default function SessionCardDetails() {
     <div className="card-actions">
       {
         registrationFee == 0 ? (
-          <button onClick={handleBookedSession}  disabled={isButtonDisabled} className="btn bg-[rgb(76,48,161)] text-white">{isOngoing? 
+          <button onClick={handleBookedSession}  disabled={isButtonDisabled} className="btn bg-[rgb(76,48,161)] text-white hover:text-black hover:bg-[rgb(212,208,229)]">{isOngoing? 
           'Book Now' : 'Registration Closed'}</button>
         )
         :
         (
-          <Link to={`/paymentPage/${_id}`}  ><button disabled={isButtonDisabled} className="btn bg-[rgb(76,48,161)] text-white">{isOngoing? 'Book Now' : 'Registration Closed'}</button></Link>
+          <Link to={`/paymentPage/${_id}`}  ><button disabled={isButtonDisabled} className="btn bg-[rgb(76,48,161)] text-white hover:text-black hover:bg-[rgb(212,208,229)]">{isOngoing? 'Book Now' : 'Registration Closed'}</button></Link>
         )
       }
       
