@@ -63,7 +63,7 @@ export default function CreateNote() {
                 <div className="label">
                 <span className="label-text font-bold">Email</span>
                 </div>
-                <input type="email" readOnly defaultValue={user.email} placeholder="Enter Email" name='email' className="input input-bordered w-full" required />
+                <input type="email" readOnly defaultValue={user.email} placeholder="Enter Email" name='email' className="input input-bordered w-full text-black" required />
                 </label>
             </div>
         </div>
@@ -73,7 +73,7 @@ export default function CreateNote() {
                 <div className="label">
                 <span className="label-text font-bold">Title</span>
                 </div>
-                <input type="text" placeholder="Enter Title*" name='title' className="input input-bordered w-full" required />
+                <input type="text" placeholder="Enter Title*" name='title' className="input input-bordered w-full text-black" required />
                 </label>
             </div>
         </div>
@@ -83,12 +83,12 @@ export default function CreateNote() {
                 <div className="label">
                 <span className="label-text font-bold">Description</span>
                 </div>
-                <textarea type="text" placeholder="Enter Description*" name='description' className="textarea" required></textarea>
+                <textarea type="text" placeholder="Enter Description*" name='description' className="textarea text-black" required></textarea>
                 </label>
             </div>
         </div>
         <div className='mt-6'>
-            <input type="submit" value="Create Note" className="btn w-full font-bold border-white bg-[rgb(76,48,161)] text-white" />
+            <input type="submit" value="Create Note" className="btn w-full font-bold border-white bg-[rgb(76,48,161)] text-white hover:text-black hover:bg-[rgb(212,208,229)]" />
         </div>
         </form>
         </div>

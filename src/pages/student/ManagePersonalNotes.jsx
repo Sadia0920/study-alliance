@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet-async';
 import Swal from 'sweetalert2';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
 import useNote from '../../hooks/useNote';
+import SectionTitle2 from '../../shared/SectionTitle2';
 
 export default function ManagePersonalNotes() {
 
@@ -50,7 +51,7 @@ export default function ManagePersonalNotes() {
   {/* My Notes */}
 
   <div className='w-10/12 mx-auto py-7'>
-  <h1 className='text-3xl font-bold text-center mb-6'>My Notes</h1>
+  <SectionTitle2 subHeading='List Of Notes' heading='My Notes'></SectionTitle2>
     <div className="overflow-x-auto">
     <table className="table">
     {/* head */}
@@ -74,9 +75,9 @@ export default function ManagePersonalNotes() {
       <td>
 
       {/* update button */}
-      <Link to={`/dashboard/updateNotes/${item._id}`}><button className='btn mr-2'><i className="fa-regular fa-pen-to-square"></i></button></Link>
+      <Link to={`/dashboard/updateNotes/${item._id}`}><button className='btn mr-2'><i className="fa-regular fa-pen-to-square text-[rgb(76,48,161)]"></i></button></Link>
       {/* delete button */}
-      <button onClick={()=>handleDeleteNote(item._id)} className='btn mt-2 lg:mt-0'><i className="fa-regular fa-trash-can"></i></button> 
+      <button onClick={()=>handleDeleteNote(item._id)} className='btn mt-2 lg:mt-0'><i className="fa-regular fa-trash-can text-red-700"></i></button> 
       </td>
       </tr>)
     }
