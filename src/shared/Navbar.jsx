@@ -90,7 +90,10 @@ export default function Navbar() {
 
       </>
 }
-      <ThemeController></ThemeController>
+<div className='hidden md:block'>
+<ThemeController></ThemeController>
+</div>
+      
   </div>
 </div>
 <Tooltip id="my-tooltip"/> 
