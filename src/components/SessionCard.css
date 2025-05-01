@@ -7,7 +7,8 @@
     font-family: Arial, sans-serif;
     margin: 10px;
     transition: transform 0.2s ease-in-out;
-    background-color:rgb(25, 81, 102,0.2);
+    /* background-color:rgba(138, 154, 171, 0.5); */
+    background-color:rgb(224, 234, 242);
   }
   
   .courseCard:hover {
@@ -34,7 +35,7 @@
   }
   
   .courseCard-description {
-    /* color: black; */
+    color: black;
     font-size: 14px;
     font-weight: bold;
     margin: 10px 0;
